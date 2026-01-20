@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env*
+
+# Config files that should keep their formatting
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
