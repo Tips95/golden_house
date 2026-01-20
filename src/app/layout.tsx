@@ -10,6 +10,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://tips95-golden-house-dccb.twc1.net'),
   title: {
     default: 'GoldenHouse Services - Строительная компания в Грозном | Механизированная штукатурка, вентфасады, вывески',
     template: '%s | GoldenHouse Services',
