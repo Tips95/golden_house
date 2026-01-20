@@ -52,21 +52,23 @@ npm install
 
 #### Build Command
 ```bash
-(ОСТАВИТЬ ПУСТЫМ)
-```
-
-⚠️ **КРИТИЧНО:** Поле **Build Command** должно быть **ПУСТЫМ**!
-
-#### Start Command
-```bash
-npm run build && npm start
+npm run build
 ```
 
 **Что происходит:**
-- Выполняется `npm run build` (создает директорию `.next`)
-- Сразу после этого выполняется `npm start`
+- Выполняется `next build`
+- Создается директория `.next` с собранным приложением
+- Результат сохраняется для использования в Start Command
+
+#### Start Command
+```bash
+npm start
+```
+
+**Что происходит:**
+- Выполняется `next start`
 - Запускает Next.js production сервер
-- Использует только что созданную директорию `.next`
+- Использует уже собранную директорию `.next` из Build Command
 - Слушает на порту из переменной окружения `PORT` (автоматически передается Timeweb)
 
 #### Output Directory (Директория сборки)
@@ -110,12 +112,14 @@ Next.js создает папку `.next/` с оптимизированными
 1. ✅ Timeweb получает webhook от GitHub
 2. ✅ Выполняется `git pull` (получение изменений)
 3. ✅ Выполняется `npm install` (установка зависимостей)
-4. ✅ Выполняется `npm run build && npm start` (сборка и запуск)
-   - `npm run build` создает директорию `.next` с собранным приложением
+4. ✅ Выполняется `npm run build` (сборка проекта)
    - Next.js генерирует статические страницы
-   - `npm start` запускает Next.js production сервер
+   - Создается директория `.next` с собранным приложением
+5. ✅ Выполняется `npm start` (запуск production сервера)
+   - Запускает Next.js production сервер
+   - Использует уже собранную директорию `.next`
    - Слушает на порту из переменной окружения `PORT` (автоматически передается Timeweb)
-5. ✅ Сайт становится доступен по домену
+6. ✅ Сайт становится доступен по домену
 
 **Время деплоя:** 2-5 минут
 
@@ -192,12 +196,13 @@ Route (app)                                   Size     First Load JS
 
 ### ❌ Проблема: "Could not find a production build in the '.next' directory"
 
-**Причина:** Build Command не пустой, или Start Command не содержит `npm run build`
+**Причина:** Build Command не указан или указан неправильно
 
 **Решение:**
-1. Убедитесь, что Build Command **ПУСТОЙ**
-2. Start Command должен быть: `npm run build && npm start`
-3. Пересоберите приложение: **App Platform** → **Пересобрать**
+1. Убедитесь, что Build Command = `npm run build` (НЕ пустой!)
+2. Start Command должен быть: `npm start` (БЕЗ `npm run build &&`)
+3. Команды должны быть **раздельными**!
+4. Пересоберите приложение: **App Platform** → **Пересобрать**
 
 ---
 
@@ -332,10 +337,10 @@ git push origin main
 
 - [x] Git репозиторий настроен на GitHub
 - [x] Все файлы закоммичены и запушены в ветку `main`
-- [x] `package.json` содержит правильную команду `start`: `"next start"`
+- [x] `package.json` содержит правильные команды: `"build": "next build"` и `"start": "next start"`
 - [x] `next.config.js` настроен для работы с `next start` (без `output: 'export'`)
-- [x] В Timeweb Cloud Build Command = ПУСТОЙ
-- [x] В Timeweb Cloud Start Command = `npm run build && npm start`
+- [x] В Timeweb Cloud Build Command = `npm run build`
+- [x] В Timeweb Cloud Start Command = `npm start`
 - [x] Изображения настроены: `images: { unoptimized: true }`
 - [x] `.gitignore` исключает `node_modules`, `.next`, `out`, `.env`
 - [x] Проект собирается без ошибок: `npm run build`

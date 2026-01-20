@@ -15,13 +15,14 @@ Root Directory:        /
 
 ```bash
 Install Command:   npm install
-Build Command:     (ОСТАВИТЬ ПУСТЫМ)
-Start Command:     npm run build && npm start
+Build Command:     npm run build
+Start Command:     npm start
 ```
 
 ⚠️ **КРИТИЧНО:** 
-- Поле **Build Command** должно быть **ПУСТЫМ**!
-- Вся логика в команде **Start Command**: `npm run build && npm start`
+- **Build Command** должен быть: `npm run build` (создает директорию `.next`)
+- **Start Command** должен быть: `npm start` (запускает уже собранное приложение)
+- Команды должны быть **раздельными**!
 
 ### 🌍 Environment Variables
 

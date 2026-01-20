@@ -2,7 +2,7 @@
 
 ## ✅ Что исправлено
 
-1. ✅ Обновлен `.timeweb.config` - Build Command пустой, Start Command = `npm run build && npm start`
+1. ✅ Обновлен `.timeweb.config` - Build Command = `npm run build`, Start Command = `npm start`
 2. ✅ Обновлена документация для единообразия
 3. ✅ Проверена сборка проекта - работает без ошибок
 4. ✅ Проверены TypeScript типы - ошибок нет
@@ -42,13 +42,14 @@ Root Directory:     /
 
 ```bash
 Install Command:   npm install
-Build Command:     (ОСТАВИТЬ ПУСТЫМ!)
-Start Command:     npm run build && npm start
+Build Command:     npm run build
+Start Command:     npm start
 ```
 
 ⚠️ **ВАЖНО:** 
-- Поле **Build Command** должно быть **ПУСТЫМ**!
-- Вся логика в команде **Start Command**: `npm run build && npm start`
+- **Build Command** должен быть: `npm run build` (создает директорию `.next`)
+- **Start Command** должен быть: `npm start` (запускает уже собранное приложение)
+- Команды должны быть **раздельными**!
 
 ### 4. Environment Variables
 
@@ -82,8 +83,8 @@ NEXT_PUBLIC_SITE_URL=https://ваш-домен.twc1.net
 
 3. **Настройте команды:**
    - Install Command: `npm install`
-   - Build Command: **(оставить пустым)**
-   - Start Command: `npm run build && npm start`
+   - Build Command: `npm run build`
+   - Start Command: `npm start`
 
 4. **Добавьте переменные окружения:**
    - `NODE_ENV=production`
@@ -101,13 +102,16 @@ npm install
 added 393 packages in 20s
 ✅ Install complete
 
-=== Start Phase ===
-npm run build && npm start
+=== Build Phase ===
+npm run build
 
 > next build
 ✓ Compiled successfully
 ✓ Generating static pages (24/24)
 ✅ Build complete
+
+=== Start Phase ===
+npm start
 
 > next start
 ▲ Next.js 14.2.35
@@ -126,12 +130,13 @@ https://ваш-домен.twc1.net
 
 ### Ошибка: "Could not find a production build in the '.next' directory"
 
-**Причина:** Build Command не пустой, или Start Command не содержит `npm run build`
+**Причина:** Build Command не указан или указан неправильно
 
 **Решение:**
-1. Убедитесь, что Build Command **ПУСТОЙ**
-2. Start Command должен быть: `npm run build && npm start`
-3. Пересоберите приложение: **App Platform** → **Пересобрать**
+1. Убедитесь, что Build Command = `npm run build` (НЕ пустой!)
+2. Start Command должен быть: `npm start` (БЕЗ `npm run build &&`)
+3. Команды должны быть **раздельными**!
+4. Пересоберите приложение: **App Platform** → **Пересобрать**
 
 ### Ошибка: "Port 3000 is already in use"
 
