@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "serve out -n -l tcp://0.0.0.0:$PORT",
+    "start": "serve out --no-request-logging --listen tcp://0.0.0.0:${PORT:-3000}",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
   },
