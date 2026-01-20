@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start": "serve out -s -n -l tcp://0.0.0.0:$PORT",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
   },
@@ -16,7 +17,8 @@
     "lucide-react": "^0.344.0",
     "clsx": "^2.1.0",
     "react-hook-form": "^7.51.0",
-    "zod": "^3.22.0"
+    "zod": "^3.22.0",
+    "serve": "^14.2.5"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
