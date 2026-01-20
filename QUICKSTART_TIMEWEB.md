@@ -17,11 +17,11 @@ Output Directory:      out
 ```bash
 Install Command:   npm install
 Build Command:     npm run build
-Start Command:     npm start
+Start Command:     (оставить пустым или удалить)
 ```
 
-> **Примечание:** `npm start` выполняет `serve out -s -n -l tcp://0.0.0.0:$PORT`  
-> Timeweb автоматически передаст переменную `$PORT`
+> **Важно:** Для статических сайтов Next.js команда Start НЕ НУЖНА!  
+> Timeweb Cloud автоматически сервит файлы из папки `out/`
 
 ### 🌍 Environment Variables
 
