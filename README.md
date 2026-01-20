@@ -122,9 +122,9 @@ goldenhouse-services/
 │   │   └── services.ts          # Конфигурация всех услуг
 │   └── lib/
 │       └── utils.ts             # Вспомогательные функции
-├── ecosystem.config.js          # PM2 конфигурация
 ├── .env.example                 # Пример переменных окружения
-├── DEPLOYMENT.md                # Инструкция по деплою
+├── TIMEWEB_AUTODEPLOY.md        # Инструкция по автодеплою
+├── package.json                 # Зависимости и скрипты
 └── README.md                    # Этот файл
 ```
 
@@ -206,44 +206,28 @@ export const services: ServiceData[] = [
 
 ## 🚀 Деплой на TimeWeb Cloud
 
-### 📚 Документация по деплою
+### 📚 Автодеплой
 
-- **[DEPLOYMENT_QUICK.md](./DEPLOYMENT_QUICK.md)** - Быстрый старт (5 минут)
-- **[TIMEWEB_SETUP.md](./TIMEWEB_SETUP.md)** - Подробная инструкция с автоматизацией
-- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Детальное руководство
-- **[PRODUCTION_CHECKLIST.md](./PRODUCTION_CHECKLIST.md)** - Чеклист перед запуском
+Проект настроен для автоматического деплоя на TimeWeb Cloud.
 
-### ⚡ Быстрый деплой
+**Документация:** [TIMEWEB_AUTODEPLOY.md](./TIMEWEB_AUTODEPLOY.md)
 
-```bash
-# 1. На сервере: настройте окружение
-bash server-setup.sh
+### ⚙️ Настройки автодеплоя
 
-# 2. Клонируйте и настройте
-cd /var/www
-git clone https://github.com/Tips95/golden_house.git goldenhouse-services
-cd goldenhouse-services
-cp .env.example .env.production
-nano .env.production  # Укажите ваш домен
-
-# 3. Установите и запустите
-npm install
-npm run build
-pm2 start ecosystem.config.js
-
-# 4. Настройте Nginx и SSL
-cp nginx.conf /etc/nginx/sites-available/goldenhouse-services
-# Отредактируйте домен в конфиге
-ln -s /etc/nginx/sites-available/goldenhouse-services /etc/nginx/sites-enabled/
-nginx -t && systemctl reload nginx
-certbot --nginx -d yourdomain.ru -d www.yourdomain.ru
-```
+1. **Repository:** https://github.com/Tips95/golden_house.git
+2. **Branch:** main
+3. **Build Command:** `npm run build`
+4. **Start Command:** `npm start`
+5. **Environment Variables:**
+   ```env
+   NODE_ENV=production
+   PORT=3000
+   NEXT_PUBLIC_SITE_URL=https://tips95-golden-house-dccb.twc1.net
+   ```
 
 ### 🔄 Обновление
 
-```bash
-bash deploy.sh  # Автоматическое обновление
-```
+Просто сделайте `git push` - TimeWeb Cloud автоматически обновит сайт!
 
 ---
 
