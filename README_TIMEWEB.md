@@ -37,14 +37,14 @@ Package Manager:    npm
 Root Directory:     /
 
 Install Command:    npm install
-Build Command:      npm run build
-Start Command:      npm start
+Build Command:      (ОСТАВИТЬ ПУСТЫМ)
+Start Command:      npm run build && npm start
 ```
 
 ⚠️ **КРИТИЧНО:** 
-- **Build Command** должен быть: `npm run build` (создает директорию `.next`)
-- **Start Command** должен быть: `npm start` (запускает уже собранное приложение)
-- Команды должны быть **раздельными**!
+- Поле **Build Command** должно быть **ПУСТЫМ**!
+- Вся логика в команде **Start Command**: `npm run build && npm start`
+- Это необходимо, потому что Timeweb Cloud не сохраняет `.next` между этапами
 
 ### 4. Переменные окружения
 

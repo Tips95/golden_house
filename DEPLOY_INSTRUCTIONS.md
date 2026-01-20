@@ -42,14 +42,14 @@ Root Directory:     /
 
 ```bash
 Install Command:   npm install
-Build Command:     npm run build
-Start Command:     npm start
+Build Command:     (ОСТАВИТЬ ПУСТЫМ!)
+Start Command:     npm run build && npm start
 ```
 
 ⚠️ **ВАЖНО:** 
-- **Build Command** должен быть: `npm run build` (создает директорию `.next`)
-- **Start Command** должен быть: `npm start` (запускает уже собранное приложение)
-- Команды должны быть **раздельными**!
+- Поле **Build Command** должно быть **ПУСТЫМ**!
+- Вся логика в команде **Start Command**: `npm run build && npm start`
+- Это необходимо, потому что Timeweb Cloud не сохраняет `.next` между этапами Build и Start
 
 ### 4. Environment Variables
 
@@ -83,8 +83,8 @@ NEXT_PUBLIC_SITE_URL=https://ваш-домен.twc1.net
 
 3. **Настройте команды:**
    - Install Command: `npm install`
-   - Build Command: `npm run build`
-   - Start Command: `npm start`
+   - Build Command: **(оставить пустым)**
+   - Start Command: `npm run build && npm start`
 
 4. **Добавьте переменные окружения:**
    - `NODE_ENV=production`
@@ -130,13 +130,12 @@ https://ваш-домен.twc1.net
 
 ### Ошибка: "Could not find a production build in the '.next' directory"
 
-**Причина:** Build Command не указан или указан неправильно
+**Причина:** Build Command не пустой, или Start Command не содержит `npm run build`
 
 **Решение:**
-1. Убедитесь, что Build Command = `npm run build` (НЕ пустой!)
-2. Start Command должен быть: `npm start` (БЕЗ `npm run build &&`)
-3. Команды должны быть **раздельными**!
-4. Пересоберите приложение: **App Platform** → **Пересобрать**
+1. Убедитесь, что Build Command **ПУСТОЙ**
+2. Start Command должен быть: `npm run build && npm start`
+3. Пересоберите приложение: **App Platform** → **Пересобрать**
 
 ### Ошибка: "Port 3000 is already in use"
 
