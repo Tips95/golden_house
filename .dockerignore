@@ -8,3 +8,7 @@ yarn-debug.log*
 yarn-error.log*
 out
 .next
+*.md
+TIMEWEB_*.md
+FINAL_INSTRUCTIONS.txt
+TIMEWEB_DOCKERFILE_ISSUE.md
