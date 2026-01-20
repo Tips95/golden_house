@@ -58,7 +58,7 @@ bash server-setup.sh
 
 # 2. Клонируйте проект
 cd /var/www
-git clone YOUR_REPO goldenhouse-services
+git clone https://github.com/Tips95/golden_house.git goldenhouse-services
 cd goldenhouse-services
 
 # 3. Настройте

@@ -249,7 +249,8 @@ npm run start
 ### На сервере: первый деплой
 ```bash
 bash server-setup.sh          # Настройка сервера
-git clone YOUR_REPO           # Клонирование
+git clone https://github.com/Tips95/golden_house.git goldenhouse-services
+cd goldenhouse-services       # Переход в папку
 npm install && npm run build  # Сборка
 pm2 start ecosystem.config.js # Запуск
 ```

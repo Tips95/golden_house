@@ -64,7 +64,7 @@
 
 1. **Клонируйте репозиторий**
 ```bash
-git clone https://github.com/ваш-username/goldenhouse-services.git
+git clone https://github.com/Tips95/golden_house.git goldenhouse-services
 cd goldenhouse-services
 ```
 
@@ -221,7 +221,7 @@ bash server-setup.sh
 
 # 2. Клонируйте и настройте
 cd /var/www
-git clone YOUR_REPO goldenhouse-services
+git clone https://github.com/Tips95/golden_house.git goldenhouse-services
 cd goldenhouse-services
 cp .env.example .env.production
 nano .env.production  # Укажите ваш домен

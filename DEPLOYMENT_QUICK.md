@@ -7,7 +7,7 @@
 ssh root@ВАШ_IP
 
 # Скачайте и запустите скрипт настройки
-wget https://raw.githubusercontent.com/YOUR_REPO/main/server-setup.sh
+wget https://raw.githubusercontent.com/Tips95/golden_house/main/server-setup.sh
 bash server-setup.sh
 ```
 
@@ -34,7 +34,7 @@ apt install -y certbot python3-certbot-nginx
 
 ```bash
 cd /var/www
-git clone YOUR_REPO_URL goldenhouse-services
+git clone https://github.com/Tips95/golden_house.git goldenhouse-services
 cd goldenhouse-services
 ```
 

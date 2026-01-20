@@ -58,7 +58,7 @@ This installs: Node.js 20.x, PM2, Nginx, Git, Certbot, and configures firewall.
 ```bash
 # Clone project
 cd /var/www
-git clone YOUR_REPO_URL goldenhouse-services
+git clone https://github.com/Tips95/golden_house.git goldenhouse-services
 cd goldenhouse-services
 
 # Configure environment

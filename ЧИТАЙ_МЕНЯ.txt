@@ -103,7 +103,8 @@
 
 На сервере (первый деплой):
   bash server-setup.sh
-  git clone YOUR_REPO
+  git clone https://github.com/Tips95/golden_house.git goldenhouse-services
+  cd goldenhouse-services
   npm install && npm run build
   pm2 start ecosystem.config.js
 

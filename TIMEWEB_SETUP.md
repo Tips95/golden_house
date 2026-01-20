@@ -23,7 +23,7 @@ ssh root@ВАШ_IP_АДРЕС
 ```bash
 # Скачайте проект
 cd /tmp
-git clone YOUR_REPO_URL goldenhouse-temp
+git clone https://github.com/Tips95/golden_house.git goldenhouse-temp
 cd goldenhouse-temp
 
 # Запустите скрипт настройки сервера
@@ -42,7 +42,7 @@ bash server-setup.sh
 
 ```bash
 cd /var/www
-git clone YOUR_REPO_URL goldenhouse-services
+git clone https://github.com/Tips95/golden_house.git goldenhouse-services
 cd goldenhouse-services
 ```
 

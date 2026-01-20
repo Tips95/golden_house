@@ -60,7 +60,7 @@ bash server-setup.sh
 
 ```bash
 cd /var/www
-git clone YOUR_REPO_URL goldenhouse-services
+git clone https://github.com/Tips95/golden_house.git goldenhouse-services
 cd goldenhouse-services
 cp .env.example .env.production
 nano .env.production  # Укажите ваш домен
