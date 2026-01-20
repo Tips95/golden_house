@@ -37,11 +37,11 @@ Package Manager:    npm
 Root Directory:     /
 
 Install Command:    npm install
-Build Command:      npm run build
-Start Command:      npm start
+Build Command:      (оставить пустым)
+Start Command:      npm run build && npm start
 ```
 
-✅ Команда `npm start` запускает встроенный Next.js production сервер
+⚠️ **Важно:** Build и Start объединены в одну команду Start из-за особенностей Timeweb Cloud
 
 ### 4. Переменные окружения
 

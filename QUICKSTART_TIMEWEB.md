@@ -15,11 +15,11 @@ Root Directory:        /
 
 ```bash
 Install Command:   npm install
-Build Command:     npm run build
-Start Command:     npm start
+Build Command:     (оставить пустым)
+Start Command:     npm run build && npm start
 ```
 
-> **Важно:** Команда `npm start` запускает встроенный Next.js сервер в production режиме
+> **Важно:** Команда Start выполняет сборку И запуск, так как Timeweb не сохраняет .next между фазами
 
 ### 🌍 Environment Variables
 
