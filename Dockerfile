@@ -15,6 +15,9 @@ COPY . .
 # Собираем Next.js приложение
 RUN npm run build
 
+# Проверяем, что .next папка создана
+RUN test -d .next || (echo "ERROR: .next directory not found after build!" && exit 1)
+
 # Переменные окружения для production
 ENV NODE_ENV=production
 ENV PORT=3000
