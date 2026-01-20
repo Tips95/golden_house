@@ -1,3 +1,5 @@
+const path = require('path')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Используем Next.js Server для Timeweb Cloud
@@ -15,6 +17,15 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  
+  // Explicit webpack configuration for path aliases (ensures Docker builds work correctly)
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, './src'),
+    }
+    return config
+  },
 }
 
 module.exports = nextConfig
