@@ -37,11 +37,11 @@ Package Manager:    npm
 Root Directory:     /
 
 Install Command:    npm install
-Build Command:      (оставить пустым)
-Start Command:      npm run build && npm start
+Build Command:      npm run build
+Start Command:      npm start
 ```
 
-⚠️ **Важно:** Build и Start объединены в одну команду Start из-за особенностей Timeweb Cloud
+✅ Build выполняется при сборке Docker образа, Start запускает сервер
 
 ### 4. Переменные окружения
 

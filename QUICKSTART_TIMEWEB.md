@@ -15,11 +15,11 @@ Root Directory:        /
 
 ```bash
 Install Command:   npm install
-Build Command:     (оставить пустым)
-Start Command:     npm run build && npm start
+Build Command:     npm run build
+Start Command:     npm start
 ```
 
-> **Важно:** Команда Start выполняет сборку И запуск, так как Timeweb не сохраняет .next между фазами
+> **Важно:** Build создает `.next` в Docker образе, Start запускает уже собранное приложение
 
 ### 🌍 Environment Variables
 
