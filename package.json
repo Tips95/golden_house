@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npx serve out -p ${PORT:-3000}",
     "lint": "next lint",
     "type-check": "tsc --noEmit"
   },
