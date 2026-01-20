@@ -29,8 +29,8 @@ RUN groupadd --gid 2000 app && \
 # Copy package files
 COPY package*.json ./
 
-# Install all dependencies (Next.js needs dev dependencies for start)
-RUN npm ci && \
+# Install production dependencies only
+RUN npm ci --only=production && \
     npm cache clean --force
 
 # Copy built application from builder
@@ -38,6 +38,9 @@ COPY --from=builder --chown=app:app /app/.next ./.next
 COPY --from=builder --chown=app:app /app/public ./public
 COPY --from=builder --chown=app:app /app/next.config.js ./next.config.js
 COPY --from=builder --chown=app:app /app/package.json ./package.json
+
+# Copy node_modules from builder (Next.js needs some dev dependencies for start)
+COPY --from=builder --chown=app:app /app/node_modules ./node_modules
 
 # Switch to non-root user
 USER app
