@@ -15,11 +15,13 @@ Root Directory:        /
 
 ```bash
 Install Command:   npm install
-Build Command:     npm run build
-Start Command:     npm start
+Build Command:     (ОСТАВИТЬ ПУСТЫМ)
+Start Command:     npm run build && npm start
 ```
 
-> **Важно:** Build создает `.next` в Docker образе, Start запускает уже собранное приложение
+⚠️ **КРИТИЧНО:** 
+- Поле **Build Command** должно быть **ПУСТЫМ**!
+- Вся логика в команде **Start Command**: `npm run build && npm start`
 
 ### 🌍 Environment Variables
 
@@ -41,8 +43,8 @@ Branch:  main
 
 ## 📋 Чеклист
 
-- [x] `package.json` настроен (serve вместо http-server)
-- [x] `next.config.js` с `output: 'export'`
+- [x] `package.json` настроен (start использует `next start`)
+- [x] `next.config.js` настроен для работы с `next start` (без `output: 'export'`)
 - [x] Проект собирается без ошибок
 - [x] Git репозиторий настроен
 - [ ] Создать приложение в Timeweb Cloud

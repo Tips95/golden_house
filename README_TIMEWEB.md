@@ -37,11 +37,13 @@ Package Manager:    npm
 Root Directory:     /
 
 Install Command:    npm install
-Build Command:      npm run build
-Start Command:      npm start
+Build Command:      (ОСТАВИТЬ ПУСТЫМ)
+Start Command:      npm run build && npm start
 ```
 
-✅ Build выполняется при сборке Docker образа, Start запускает сервер
+⚠️ **КРИТИЧНО:** 
+- Поле **Build Command** должно быть **ПУСТЫМ**!
+- Вся логика в команде **Start Command**: `npm run build && npm start`
 
 ### 4. Переменные окружения
 
