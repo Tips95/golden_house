@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static Export для TimeWeb Cloud Frontend Apps
-  output: 'export',
+  // Используем Next.js Server для Timeweb Cloud
+  // output: 'export', - УБРАЛИ для использования next start
   
-  // Для статического экспорта нужно отключить оптимизацию изображений
   images: {
-    unoptimized: true,
+    unoptimized: true, // Отключаем оптимизацию изображений для совместимости
   },
   
   experimental: {

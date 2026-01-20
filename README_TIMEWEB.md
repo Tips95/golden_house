@@ -4,11 +4,11 @@
 
 Проект полностью настроен для автоматического деплоя на Timeweb Cloud:
 
-- ✅ Next.js 14 со статическим экспортом (`output: 'export'`)
-- ✅ Пакет `serve` для запуска статического сервера
-- ✅ Команда `start` настроена для Timeweb Cloud
+- ✅ Next.js 14 с production сервером
+- ✅ Команда `start` использует `next start`
+- ✅ SSG генерация 24 страниц при сборке
 - ✅ Все зависимости установлены
-- ✅ Проект успешно собирается (24 страницы)
+- ✅ Проект успешно собирается
 
 ## ⚡ Быстрый старт
 
@@ -31,18 +31,17 @@ git push origin main
 ### 3. Настройки сборки
 
 ```
-Тип приложения:     Next.js (Static)
+Тип приложения:     Next.js
 Node.js версия:     20.x
 Package Manager:    npm
 Root Directory:     /
-Output Directory:   out
 
 Install Command:    npm install
 Build Command:      npm run build
-Start Command:      (оставить пустым)
+Start Command:      npm start
 ```
 
-⚠️ **Важно:** Команду Start НЕ УКАЗЫВАТЬ - Timeweb автоматически сервит статику!
+✅ Команда `npm start` запускает встроенный Next.js production сервер
 
 ### 4. Переменные окружения
 

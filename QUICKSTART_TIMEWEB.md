@@ -9,7 +9,6 @@
 Node.js версия:        20.x
 Package Manager:       npm
 Root Directory:        /
-Output Directory:      out
 ```
 
 ### 🔧 Commands
@@ -17,11 +16,10 @@ Output Directory:      out
 ```bash
 Install Command:   npm install
 Build Command:     npm run build
-Start Command:     (оставить пустым или удалить)
+Start Command:     npm start
 ```
 
-> **Важно:** Для статических сайтов Next.js команда Start НЕ НУЖНА!  
-> Timeweb Cloud автоматически сервит файлы из папки `out/`
+> **Важно:** Команда `npm start` запускает встроенный Next.js сервер в production режиме
 
 ### 🌍 Environment Variables
 
