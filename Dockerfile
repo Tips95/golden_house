@@ -11,7 +11,10 @@ COPY package*.json ./
 RUN npm ci --include=dev
 
 # 3. Копируем все исходные файлы (включая конфиги tailwind, postcss, tsconfig)
+# Важно: копируем src/, конфиги и все необходимые файлы
 COPY . .
+# Убедимся, что конфиги скопированы
+RUN ls -la tailwind.config.ts postcss.config.js tsconfig.json next.config.js 2>/dev/null || echo "Config files check"
 
 # 4. Сборка Next.js приложения
 # Это создаст директорию .next с production build

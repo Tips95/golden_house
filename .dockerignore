@@ -8,6 +8,7 @@ yarn-debug.log*
 yarn-error.log*
 out
 .next
+# Документация (не нужна в образе)
 *.md
 TIMEWEB_*.md
 FINAL_INSTRUCTIONS.txt
