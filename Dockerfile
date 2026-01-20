@@ -5,8 +5,9 @@ WORKDIR /app
 # 1. Сначала только конфиги
 COPY package*.json ./
 
-# 2. Чистая установка (frozen-lockfile)
-RUN npm ci
+# 2. Установка ВСЕХ зависимостей (включая devDependencies)
+# tailwindcss, postcss, autoprefixer нужны для сборки Next.js
+RUN npm ci --include=dev
 
 # 3. Копируем остальное
 COPY . .
