@@ -1,23 +1,13 @@
-FROM node:20-slim
+# ... (установка зависимостей и копирование файлов) ...
 
-WORKDIR /app
+# 1. Копируем исходный код
+COPY --chown=app:app . .
 
-# Copy package files first (for better layer caching)
-COPY package*.json ./
-
-# Install dependencies
-RUN npm ci
-
-# Copy all source files
-COPY . .
-
-# Build the Next.js application (CRITICAL: must be before start)
-# This creates the .next directory with production build
+# 2. Собираем приложение (ЭТОГО ШАГА У ВАС СЕЙЧАС НЕТ)
 RUN npm run build
 
-# Expose port
-EXPOSE 3000
+# 3. Переключаемся на пользователя (если нужно)
+USER app
 
-# Start the application at runtime (NOT during build)
-# CMD runs when container starts, not during image build
-CMD ["npm", "start"]
+# 4. Запускаем сервер при старте контейнера (CMD, а не RUN!)
+CMD ["npm", "run", "start"]
