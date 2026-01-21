@@ -53,7 +53,7 @@ const ADVANTAGES = [
   {
     icon: Home,
     title: '500+ проектов',
-    description: 'Более 500 завершённых проектов с 2021 года',
+    description: 'Более 500 завершённых проектов с 2019 года',
   },
   {
     icon: Flame,

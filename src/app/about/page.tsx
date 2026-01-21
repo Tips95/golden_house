@@ -3,14 +3,14 @@ import { Award, Users, TrendingUp, Target } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'О компании',
-  description: 'Строительная компания GoldenHouse Services работает с 2021 года. Более 500 завершённых проектов.',
+  description: 'Строительная компания GoldenHouse Services работает с 2019 года. Более 500 завершённых проектов.',
 }
 
 const FEATURES = [
   {
     icon: Award,
-    title: '4 года на рынке',
-    description: 'Работаем с 2021 года, постоянно совершенствуем технологии',
+    title: '5+ лет на рынке',
+    description: 'Работаем с 2019 года, постоянно совершенствуем технологии',
   },
   {
     icon: Users,
@@ -68,8 +68,8 @@ export default function AboutPage() {
             <h2 className="heading-2 mb-8 text-center">Наша история</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-neutral-700 mb-4">
-                Компания GoldenHouse Services основана в 2021 году группой опытных строителей, которые решили
-                создать сервис европейского уровня на российском рынке. За 4 года работы мы выполнили
+                Компания GoldenHouse Services основана в 2019 году группой опытных строителей, которые решили
+                создать сервис европейского уровня на российском рынке. За 5 лет работы мы выполнили
                 более 500 проектов — от отделки квартир до фасадов коммерческих зданий.
               </p>
               <p className="text-neutral-700 mb-4">

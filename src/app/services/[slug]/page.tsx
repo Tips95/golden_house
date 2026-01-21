@@ -10,6 +10,7 @@ import ProblemsSection from '@/components/services/ProblemsSection'
 import Calculator from '@/components/calculator/Calculator'
 import CasesSection from '@/components/services/CasesSection'
 import BrandsSection from '@/components/services/BrandsSection'
+import PortfolioSection from '@/components/services/PortfolioSection'
 
 interface PageProps {
   params: {
@@ -90,6 +91,10 @@ export default function ServicePage({ params }: PageProps) {
 
       {service.cases && service.cases.length > 0 && (
         <CasesSection cases={service.cases} />
+      )}
+
+      {service.portfolioImages && service.portfolioImages.length > 0 && (
+        <PortfolioSection images={service.portfolioImages} />
       )}
 
       <FAQSection faqs={service.faq} />

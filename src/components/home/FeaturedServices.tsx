@@ -88,12 +88,17 @@ export default function FeaturedServices() {
             </span>
           </motion.div>
           
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-primary mb-3 sm:mb-4 lg:mb-6">
-            Топ-4 услуги{' '}
-            <span className="bg-gradient-to-r from-accent-orange via-yellow-500 to-accent-orange bg-clip-text text-transparent animate-gradient">
-              GoldenHouse Services
-            </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-primary mb-3 sm:mb-4 lg:mb-6 text-center">
+            Топ-4 услуги
           </h2>
+          <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light mb-3 sm:mb-4 lg:mb-6 text-center">
+            <div className="bg-gradient-to-r from-accent-orange via-yellow-500 to-accent-orange bg-clip-text text-transparent animate-gradient">
+              Golden House
+            </div>
+            <div className="bg-gradient-to-r from-accent-orange via-yellow-500 to-accent-orange bg-clip-text text-transparent animate-gradient">
+              Services
+            </div>
+          </div>
           <p className="text-base sm:text-lg lg:text-xl text-neutral-600 max-w-3xl mx-auto px-4">
             Выберите направление и получите профессиональное решение с гарантией качества
           </p>

@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 
 const FACADE_MATERIALS = [
   { id: 'ceramic', name: 'Керамогранит', price: 3200 },
-  { id: 'composite', name: 'Алюкобонд', price: 2800 },
+  { id: 'composite', name: 'Алюкобонд + (Композит)', price: 2800 },
   { id: 'fiber', name: 'Фиброцементные панели', price: 2400 },
   { id: 'hpl', name: 'HPL-панели', price: 3500 },
 ]
@@ -21,10 +21,15 @@ export default function FacadeCalculator() {
   const calculatePrice = () => {
     let basePrice = area * selectedMaterial.price
     
-    // Доплата за утепление больше 100 мм
-    if (insulationThickness > 100) {
-      const extraInsulation = (insulationThickness - 100) / 50
-      basePrice += area * (extraInsulation * 200)
+    // Доплата за утепление 3мм и 4мм (фиксированная стоимость)
+    if (insulationThickness === 3) {
+      basePrice += 4200
+    } else if (insulationThickness === 4) {
+      basePrice += 5100
+    }
+    // Доплата за утепление 50мм, 100мм, 150мм, 200мм (+200₽/м²)
+    else if ([50, 100, 150, 200].includes(insulationThickness)) {
+      basePrice += area * 200
     }
     
     return basePrice
@@ -92,18 +97,18 @@ export default function FacadeCalculator() {
             <label className="block text-sm font-semibold text-primary mb-3">
               Толщина утепления (мм)
             </label>
-            <div className="flex gap-2">
-              {[50, 100, 150, 200].map(value => (
+            <div className="flex gap-2 flex-wrap">
+              {[3, 4, 50, 100, 150, 200].map(value => (
                 <button
                   key={value}
                   onClick={() => setInsulationThickness(value)}
-                  className={`flex-1 py-2 px-3 rounded-lg font-semibold transition-all ${
+                  className={`py-2 px-3 rounded-lg font-semibold transition-all ${
                     insulationThickness === value
                       ? 'bg-accent-blue text-white'
                       : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
-                  }`}
+                  } ${value === 3 || value === 4 ? 'flex-1' : 'flex-1'}`}
                 >
-                  {value}
+                  {value} {value === 3 || value === 4 ? 'мм' : ''}
                 </button>
               ))}
             </div>
