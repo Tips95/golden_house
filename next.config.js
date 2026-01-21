@@ -2,8 +2,8 @@ const path = require('path')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Используем Next.js Server для Timeweb Cloud
-  // output: 'export', - УБРАЛИ для использования next start
+  // Статическая генерация для Timeweb Cloud Frontend Apps
+  output: 'export',
   
   // Timeweb часто деплоит с NODE_ENV=production и может не установить devDependencies,
   // из-за чего next build падает на этапе ESLint. Отключаем ESLint во время build.
@@ -12,19 +12,18 @@ const nextConfig = {
   },
 
   images: {
-    unoptimized: true, // Отключаем оптимизацию изображений для совместимости
+    unoptimized: true, // Обязательно для статического экспорта
   },
   
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
   
-  // Production optimizations
-  compress: true,
+  // Production optimizations (compress не работает со статическим экспортом)
   poweredByHeader: false,
   reactStrictMode: true,
   
-  // Explicit webpack configuration for path aliases (ensures Docker builds work correctly)
+  // Explicit webpack configuration for path aliases
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
