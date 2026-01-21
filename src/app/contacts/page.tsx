@@ -23,8 +23,8 @@ export default function ContactsPage() {
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-1 mb-6">Контакты</h1>
-            <p className="text-xl text-neutral-200">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-tight">Контакты</h1>
+            <p className="text-xl lg:text-2xl text-white/90">
               Свяжитесь с нами удобным способом. Ответим на все вопросы в течение 15 минут.
             </p>
           </div>

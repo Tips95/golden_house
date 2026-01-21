@@ -14,14 +14,53 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
+    let ticking = false
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY
+          setIsScrolled(currentScrollY > 20)
+
+          // Логика скрытия/показа шапки на мобильных устройствах
+          if (window.innerWidth < 1024) { // lg breakpoint
+            const scrollDifference = Math.abs(currentScrollY - lastScrollY)
+            
+            // Минимальный порог прокрутки для срабатывания (5px)
+            if (scrollDifference < 5) {
+              ticking = false
+              return
+            }
+
+            if (currentScrollY < 10) {
+              // В самом верху - всегда показываем
+              setIsHeaderVisible(true)
+            } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+              // Прокрутка вниз и уже проскроллили больше 50px - скрываем
+              setIsHeaderVisible(false)
+            } else if (currentScrollY < lastScrollY) {
+              // Прокрутка вверх - показываем
+              setIsHeaderVisible(true)
+            }
+          } else {
+            // На десктопе всегда показываем
+            setIsHeaderVisible(true)
+          }
+
+          setLastScrollY(currentScrollY)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener('scroll', handleScroll)
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [lastScrollY])
 
   const navigation = [
     { name: 'Услуги', href: '/services', hasDropdown: true },
@@ -35,6 +74,8 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-xl shadow-neutral-900/5' : 'bg-white/95 backdrop-blur-md'
+      } ${
+        isHeaderVisible ? 'translate-y-0' : '-translate-y-full lg:translate-y-0'
       }`}
     >
       <nav className="container-custom">

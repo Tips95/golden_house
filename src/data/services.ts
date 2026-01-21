@@ -84,7 +84,7 @@ export const services: ServiceData[] = [
     heroSubtitle: 'Выравнивание стен машинным способом от 350 ₽/м². Гарантия 3 года. Работаем с новостройками и вторичкой',
     priceFrom: 350,
     priceUnit: 'м²',
-    image: '/images/services/plaster-hero.jpg',
+    image: '/images/services/plaster-hero.png',
     icon: 'Brush',
     benefits: [
       'Скорость работ в 3-5 раз выше ручного метода',

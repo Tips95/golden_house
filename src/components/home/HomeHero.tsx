@@ -12,7 +12,7 @@ const BENEFITS = [
 
 export default function HomeHero() {
   return (
-    <section className="relative bg-gradient-to-br from-primary via-primary-light to-primary-dark text-white overflow-hidden min-h-[90vh] flex items-center">
+    <section className="relative bg-gradient-to-br from-primary via-primary-light to-primary-dark text-white overflow-hidden min-h-[75vh] flex items-center">
       {/* Animated Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-tr from-accent-orange/10 via-transparent to-accent-blue/10" />
       
@@ -31,7 +31,7 @@ export default function HomeHero() {
       <div className="absolute top-20 right-10 w-72 h-72 bg-accent-orange/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent-blue/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
-      <div className="container-custom py-20 relative z-10">
+      <div className="container-custom py-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <motion.div
@@ -82,7 +82,7 @@ export default function HomeHero() {
               </a>
               <a
                 href="#services"
-                className="btn-secondary bg-white/10 border-white text-white hover:bg-white hover:text-primary text-lg px-10 py-4"
+                className="btn-secondary-dark text-lg px-10 py-4"
               >
                 Наши услуги
               </a>

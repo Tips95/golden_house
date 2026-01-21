@@ -24,13 +24,13 @@ export default function CTASection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="heading-2 mb-6">Готовы начать ваш проект?</h2>
-            <p className="text-xl text-neutral-200 mb-10 max-w-2xl mx-auto">
+            <h2 className="heading-2 mb-4">Готовы начать ваш проект?</h2>
+            <p className="text-xl text-neutral-200 mb-8 max-w-2xl mx-auto">
               Оставьте заявку сейчас и получите бесплатный выезд замерщика и точную смету в течение
               2 часов
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <a 
                 href="https://wa.me/79281958885"
                 target="_blank"
@@ -44,7 +44,7 @@ export default function CTASection() {
               </a>
               <a 
                 href="tel:+79281958885" 
-                className="inline-flex items-center justify-center btn-secondary bg-white/10 border-white text-white hover:bg-white hover:text-primary text-lg px-10 py-4"
+                className="inline-flex items-center justify-center btn-secondary-dark text-lg px-10 py-4"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Позвонить сейчас

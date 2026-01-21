@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Instagram } from 'lucide-react'
 import { services } from '@/data/services'
 import { formatPhoneNumber } from '@/lib/utils'
 
@@ -20,13 +20,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div>
-            <div className="mb-6">
+            <div className="mb-6 bg-white rounded-xl p-4 inline-block">
               <Image
                 src="/images/logo-goldenhouse.png"
                 alt="GoldenHouse Services"
                 width={280}
                 height={93}
-                className="h-18 w-auto brightness-0 invert"
+                className="h-16 w-auto"
               />
             </div>
             <p className="text-neutral-300 text-sm mb-4">
@@ -38,7 +38,7 @@ export default function Footer() {
                 href="https://wa.me/79281958885"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-orange transition-colors"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-green-500 hover:scale-110 transition-all text-xs font-semibold"
                 aria-label="WhatsApp"
               >
                 WA
@@ -47,14 +47,23 @@ export default function Footer() {
                 href="https://t.me/+79281958885"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-orange transition-colors"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-500 hover:scale-110 transition-all text-xs font-semibold"
                 aria-label="Telegram"
               >
                 TG
               </a>
               <a
+                href="https://instagram.com/goldenhouse_services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-gradient-to-tr hover:from-purple-500 hover:via-pink-500 hover:to-orange-500 hover:scale-110 transition-all"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
                 href={`tel:${COMPANY_INFO.phone}`}
-                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-orange transition-colors text-xs"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent-orange hover:scale-110 transition-all text-xs"
                 aria-label="Phone"
               >
                 📞

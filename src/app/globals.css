@@ -43,32 +43,45 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-accent-orange to-accent-orange/90 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-accent-orange/30 transition-all hover:shadow-xl hover:shadow-accent-orange/40 hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-accent-orange via-orange-500 to-yellow-500 px-8 py-3.5 text-sm font-semibold text-white shadow-xl shadow-accent-orange/40 transition-all hover:shadow-2xl hover:shadow-accent-orange/60 hover:-translate-y-1 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-xl border-2 border-primary bg-transparent px-8 py-3.5 text-sm font-semibold text-primary transition-all hover:bg-primary hover:text-white hover:-translate-y-0.5 active:scale-95;
+    @apply inline-flex items-center justify-center rounded-xl border-2 border-neutral-300 bg-transparent px-8 py-3.5 text-sm font-light text-neutral-700 transition-all hover:border-accent-orange hover:text-accent-orange hover:-translate-y-0.5 active:scale-95;
+  }
+
+  .btn-secondary-dark {
+    @apply inline-flex items-center justify-center rounded-xl border-2 border-white bg-white px-8 py-3.5 text-sm font-semibold text-primary transition-all hover:bg-accent-orange hover:text-white hover:border-accent-orange hover:-translate-y-0.5 active:scale-95;
   }
 
   .heading-1 {
-    @apply text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-7xl;
+    @apply text-4xl font-light tracking-tight text-primary sm:text-5xl lg:text-7xl;
   }
 
   .heading-2 {
-    @apply text-3xl font-extrabold tracking-tight text-primary sm:text-4xl lg:text-5xl;
+    @apply text-3xl font-light tracking-tight text-primary sm:text-4xl lg:text-5xl;
   }
 
   .heading-3 {
-    @apply text-2xl font-bold tracking-tight text-primary sm:text-3xl lg:text-4xl;
+    @apply text-2xl font-light tracking-tight text-primary sm:text-3xl lg:text-4xl;
   }
 
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-10 sm:py-12 lg:py-16;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }

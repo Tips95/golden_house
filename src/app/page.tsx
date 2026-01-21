@@ -9,7 +9,9 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
-      <FeaturedServices />
+      <div id="services">
+        <FeaturedServices />
+      </div>
       <StatsSection />
       <ServicesByCategory />
       <WhyUs />

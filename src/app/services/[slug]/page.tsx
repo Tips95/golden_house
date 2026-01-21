@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getServiceBySlug, getAllServiceSlugs } from '@/data/services'
+import { securityBrands } from '@/data/brands'
 import ServiceHero from '@/components/services/ServiceHero'
 import ProcessSection from '@/components/services/ProcessSection'
 import PricingSection from '@/components/services/PricingSection'
@@ -8,6 +9,7 @@ import FAQSection from '@/components/services/FAQSection'
 import ProblemsSection from '@/components/services/ProblemsSection'
 import Calculator from '@/components/calculator/Calculator'
 import CasesSection from '@/components/services/CasesSection'
+import BrandsSection from '@/components/services/BrandsSection'
 
 interface PageProps {
   params: {
@@ -73,6 +75,10 @@ export default function ServicePage({ params }: PageProps) {
         problems={service.problems}
         solutions={service.solutions}
       />
+
+      {service.slug === 'sistemy-bezopasnosti-skud' && securityBrands && securityBrands.length > 0 && (
+        <BrandsSection categories={securityBrands} />
+      )}
 
       {service.calculatorType && (
         <Calculator type={service.calculatorType} serviceName={service.title} />

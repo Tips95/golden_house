@@ -11,8 +11,8 @@ export default function PortfolioHero() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h1 className="heading-1 mb-6">Наши проекты</h1>
-          <p className="text-xl text-neutral-200">
+          <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-tight">Наши проекты</h1>
+          <p className="text-xl lg:text-2xl text-white/90">
             Более 500 завершённых объектов в Грозном и ЧР. Смотрите реальные фотографии работ
             и читайте отзывы клиентов.
           </p>

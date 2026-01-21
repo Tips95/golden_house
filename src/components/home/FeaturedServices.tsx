@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Brush, Mountain, Lightbulb, Shield } from 'lucide-react'
 
 const featuredServices = [
@@ -16,6 +17,7 @@ const featuredServices = [
     shadowColor: 'shadow-blue-500/30',
     slug: 'mekhanizirovannaya-shtukaturka',
     features: ['Идеально ровная поверхность', 'Быстрое выполнение', 'Гарантия качества'],
+    image: '/images/services/plaster-hero.png',
   },
   {
     id: '2',
@@ -28,6 +30,7 @@ const featuredServices = [
     shadowColor: 'shadow-orange-500/30',
     slug: 'fasadnye-raboty',
     features: ['Энергоэффективность', 'Современный дизайн', 'Защита от влаги'],
+    image: '/images/services/security-hero.png',
   },
   {
     id: '3',
@@ -40,6 +43,7 @@ const featuredServices = [
     shadowColor: 'shadow-yellow-500/30',
     slug: 'naruzhnaya-reklama',
     features: ['Яркие вывески', 'LED технологии', 'Индивидуальный дизайн'],
+    image: '/images/services/signage-hero.png',
   },
   {
     id: '4',
@@ -52,6 +56,7 @@ const featuredServices = [
     shadowColor: 'shadow-purple-500/30',
     slug: 'sistemy-bezopasnosti',
     features: ['Круглосуточная защита', 'Современное оборудование', 'Полная автоматизация'],
+    image: '/images/services/facade-hero.png',
   },
 ]
 
@@ -69,7 +74,7 @@ export default function FeaturedServices() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -110,65 +115,39 @@ export default function FeaturedServices() {
               >
                 <Link
                   href={`/services/${service.slug}`}
-                  className="block relative"
+                  className="block relative group"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 rounded-3xl transition-opacity duration-500 blur-xl`} />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500 blur-xl`} />
                   
-                  <div className={`relative bg-white rounded-3xl p-8 lg:p-10 shadow-xl ${service.shadowColor} hover:shadow-2xl transition-all duration-500 border-2 border-transparent group-hover:border-neutral-200 overflow-hidden`}>
-                    {/* Градиентный фон при ховере */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-                    
-                    <div className="relative">
-                      {/* Иконка */}
-                      <div className={`inline-flex items-center justify-center w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br ${service.gradient} rounded-2xl lg:rounded-3xl shadow-lg ${service.shadowColor} group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 mb-6`}>
-                        <Icon className="w-10 h-10 lg:w-12 lg:h-12 text-white" />
+                  <div className="relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                    {/* Фото */}
+                    {service.image ? (
+                      <div className="relative w-full aspect-[4/3] overflow-hidden">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
                       </div>
-
-                      {/* Заголовок */}
-                      <h3 className="text-2xl lg:text-3xl font-extrabold text-primary mb-4 group-hover:text-accent-orange transition-colors leading-tight">
+                    ) : (
+                      // Если нет фото - показываем иконку
+                      <div className={`relative w-full aspect-[4/3] bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
+                        <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-2xl shadow-lg">
+                          <Icon className="w-10 h-10 text-white" />
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Текст под фото */}
+                    <div className="p-6 lg:p-8">
+                      <h3 className="text-xl lg:text-2xl font-light text-primary mb-2 group-hover:text-accent-orange transition-colors">
                         {service.title}
                       </h3>
-
-                      {/* Описание */}
-                      <p className="text-neutral-600 mb-6 leading-relaxed text-base lg:text-lg">
+                      <p className="text-neutral-600 text-sm lg:text-base leading-relaxed">
                         {service.description}
                       </p>
-
-                      {/* Преимущества */}
-                      <div className="space-y-3 mb-8">
-                        {service.features.map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-3">
-                            <div className={`w-1.5 h-1.5 bg-gradient-to-r ${service.gradient} rounded-full`} />
-                            <span className="text-sm text-neutral-700">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Цена и CTA */}
-                      <div className="flex items-center justify-between pt-6 border-t border-neutral-100">
-                        <div className="flex items-baseline gap-2">
-                          {service.price !== 'по запросу' ? (
-                            <>
-                              <span className="text-sm text-neutral-500">от</span>
-                              <span className={`text-3xl lg:text-4xl font-extrabold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
-                                {service.price} ₽
-                              </span>
-                              {service.unit && (
-                                <span className="text-neutral-500">/{service.unit}</span>
-                              )}
-                            </>
-                          ) : (
-                            <span className={`text-xl lg:text-2xl font-extrabold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
-                              Цена по запросу
-                            </span>
-                          )}
-                        </div>
-
-                        <div className="flex items-center text-accent-orange font-bold group-hover:translate-x-2 transition-transform text-sm lg:text-base">
-                          Узнать больше
-                          <ArrowRight className="w-5 h-5 ml-2" />
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </Link>

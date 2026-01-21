@@ -23,6 +23,21 @@ export default function ServiceHero({
 }: ServiceHeroProps) {
   return (
     <section className="relative bg-gradient-to-br from-primary via-primary-light to-primary-dark text-white overflow-hidden">
+      {/* Background Image */}
+      {image && (
+        <div className="absolute inset-0">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover opacity-20"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary-dark/80" />
+        </div>
+      )}
+      
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{ 
@@ -85,7 +100,7 @@ export default function ServiceHero({
               </a>
               <a
                 href="/portfolio"
-                className="btn-secondary bg-white/10 border-white text-white hover:bg-white hover:text-primary text-base px-8 py-4 inline-flex items-center justify-center"
+                className="btn-secondary-dark text-base px-8 py-4 inline-flex items-center justify-center"
               >
                 Смотреть портфолио
               </a>

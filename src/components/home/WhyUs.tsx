@@ -44,7 +44,7 @@ export default function WhyUs() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <h2 className="heading-2 mb-4">Почему выбирают нас</h2>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto">

@@ -36,8 +36,8 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-primary to-primary-dark text-white py-20">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="heading-1 mb-6">О компании GoldenHouse Services</h1>
-            <p className="text-xl text-neutral-200">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-tight">О компании GoldenHouse Services</h1>
+            <p className="text-xl lg:text-2xl text-white/90">
               Профессиональные строительные услуги с гарантией качества и соблюдением сроков
             </p>
           </div>
