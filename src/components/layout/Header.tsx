@@ -79,7 +79,7 @@ export default function Header() {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center transition-transform hover:scale-105">
             <Image
@@ -88,7 +88,7 @@ export default function Header() {
               width={320}
               height={107}
               priority
-              className="h-20 w-auto"
+              className="h-12 sm:h-16 lg:h-20 w-auto"
             />
           </Link>
 

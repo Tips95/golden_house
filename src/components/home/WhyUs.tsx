@@ -44,15 +44,15 @@ export default function WhyUs() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-8 sm:mb-10"
         >
-          <h2 className="heading-2 mb-4">Почему выбирают нас</h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-primary mb-3 sm:mb-4">Почему выбирают нас</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-neutral-600 max-w-3xl mx-auto px-4">
             Более 500 довольных клиентов доверили нам свои объекты
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {FEATURES.map((feature, index) => (
             <motion.div
               key={index}
@@ -63,15 +63,15 @@ export default function WhyUs() {
               className="relative group"
             >
               {/* Glow effect on hover */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-accent-orange to-accent-blue rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500" />
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-accent-orange to-accent-blue rounded-xl sm:rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500" />
               
-              <div className="relative bg-white rounded-2xl p-8 shadow-lg border-2 border-neutral-100 hover:border-accent-orange/30 transition-all h-full">
-                <div className="w-14 h-14 bg-gradient-to-br from-accent-orange to-yellow-500 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-accent-orange/30 group-hover:scale-110 transition-transform">
-                  <feature.icon className="w-7 h-7 text-white" />
+              <div className="relative bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-8 shadow-lg border-2 border-neutral-100 hover:border-accent-orange/30 transition-all h-full">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-accent-orange to-yellow-500 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg shadow-accent-orange/30 group-hover:scale-110 transition-transform">
+                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
 
-                <h3 className="text-xl font-extrabold text-primary mb-4 group-hover:text-accent-orange transition-colors">{feature.title}</h3>
-                <p className="text-neutral-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg sm:text-xl font-extrabold text-primary mb-2 sm:mb-4 group-hover:text-accent-orange transition-colors">{feature.title}</h3>
+                <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">{feature.description}</p>
               </div>
             </motion.div>
           ))}

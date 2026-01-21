@@ -34,10 +34,10 @@ export default function ServicesByCategory() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-8 sm:mb-10"
         >
-          <h2 className="heading-2 mb-4">Все наши услуги</h2>
-          <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-primary mb-3 sm:mb-4">Все наши услуги</h2>
+          <p className="text-base sm:text-lg text-neutral-600 max-w-3xl mx-auto px-4">
             Полный спектр строительных и инженерных работ с фиксированными ценами
           </p>
         </motion.div>
@@ -57,18 +57,18 @@ export default function ServicesByCategory() {
                 transition={{ delay: catIndex * 0.2 }}
               >
                 {/* Заголовок категории */}
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 bg-gradient-to-br from-accent-orange to-yellow-500 rounded-xl flex items-center justify-center shadow-lg shadow-accent-orange/30">
-                    <CategoryIcon className="w-7 h-7 text-white" />
+                <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-accent-orange to-yellow-500 rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg shadow-accent-orange/30 flex-shrink-0">
+                    <CategoryIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl lg:text-3xl font-light text-primary">{category.name}</h3>
-                    <p className="text-neutral-600 text-sm mt-1">{category.description}</p>
+                  <div className="min-w-0">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-light text-primary truncate">{category.name}</h3>
+                    <p className="text-neutral-600 text-xs sm:text-sm mt-1 line-clamp-1 sm:line-clamp-2">{category.description}</p>
                   </div>
                 </div>
 
                 {/* Услуги категории - компактный список */}
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                   {categoryServices.map((service, index) => {
                     const Icon = iconMap[service.icon as keyof typeof iconMap] || Brush
 
@@ -82,20 +82,20 @@ export default function ServicesByCategory() {
                       >
                         <Link
                           href={`/services/${service.slug}`}
-                          className="block bg-white rounded-xl p-5 hover:shadow-lg transition-all duration-300 group border border-neutral-200 hover:border-accent-orange"
+                          className="block bg-white rounded-lg sm:rounded-xl p-3 sm:p-5 hover:shadow-lg transition-all duration-300 group border border-neutral-200 hover:border-accent-orange"
                         >
-                          <div className="flex items-center gap-4">
+                          <div className="flex items-center gap-3 sm:gap-4">
                             {/* Иконка */}
-                            <div className="w-12 h-12 bg-gradient-to-br from-accent-orange to-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                              <Icon className="w-6 h-6 text-white" />
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-accent-orange to-yellow-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                              <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                             </div>
 
                             {/* Контент */}
                             <div className="flex-1 min-w-0">
-                              <h4 className="font-light text-lg text-primary group-hover:text-accent-orange transition-colors mb-1 truncate">
+                              <h4 className="font-light text-base sm:text-lg text-primary group-hover:text-accent-orange transition-colors mb-0.5 sm:mb-1 truncate">
                                 {service.title}
                               </h4>
-                              <div className="flex items-baseline gap-1.5">
+                              <div className="flex items-baseline gap-1 sm:gap-1.5">
                                 {service.priceFrom ? (
                                   <>
                                     <span className="text-xs text-neutral-500">от</span>
@@ -113,7 +113,7 @@ export default function ServicesByCategory() {
                             </div>
 
                             {/* Стрелка */}
-                            <ArrowRight className="w-5 h-5 text-neutral-400 group-hover:text-accent-orange group-hover:translate-x-1 transition-all flex-shrink-0" />
+                            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-neutral-400 group-hover:text-accent-orange group-hover:translate-x-1 transition-all flex-shrink-0" />
                           </div>
                         </Link>
                       </motion.div>

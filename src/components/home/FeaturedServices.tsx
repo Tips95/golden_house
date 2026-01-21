@@ -74,33 +74,33 @@ export default function FeaturedServices() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-10"
+          className="text-center mb-8 sm:mb-10"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent-orange/10 to-accent-blue/10 rounded-full mb-6 backdrop-blur-sm border border-accent-orange/20"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-accent-orange/10 to-accent-blue/10 rounded-full mb-4 sm:mb-6 backdrop-blur-sm border border-accent-orange/20"
           >
             <div className="w-2 h-2 bg-accent-orange rounded-full animate-pulse" />
-            <span className="text-sm font-bold text-primary uppercase tracking-wider">
+            <span className="text-xs sm:text-sm font-bold text-primary uppercase tracking-wider">
               Основные направления
             </span>
           </motion.div>
           
-          <h2 className="heading-2 mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-light text-primary mb-3 sm:mb-4 lg:mb-6">
             Топ-4 услуги{' '}
             <span className="bg-gradient-to-r from-accent-orange via-yellow-500 to-accent-orange bg-clip-text text-transparent animate-gradient">
               GoldenHouse Services
             </span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-neutral-600 max-w-3xl mx-auto px-4">
             Выберите направление и получите профессиональное решение с гарантией качества
           </p>
         </motion.div>
 
         {/* Сетка основных услуг */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
           {featuredServices.map((service, index) => {
             const Icon = service.icon
 
@@ -141,11 +141,11 @@ export default function FeaturedServices() {
                     )}
                     
                     {/* Текст под фото */}
-                    <div className="p-6 lg:p-8">
-                      <h3 className="text-xl lg:text-2xl font-light text-primary mb-2 group-hover:text-accent-orange transition-colors">
+                    <div className="p-4 sm:p-6 lg:p-8">
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-light text-primary mb-1 sm:mb-2 group-hover:text-accent-orange transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-neutral-600 text-sm lg:text-base leading-relaxed">
+                      <p className="text-neutral-600 text-xs sm:text-sm lg:text-base leading-relaxed">
                         {service.description}
                       </p>
                     </div>
@@ -161,14 +161,14 @@ export default function FeaturedServices() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="text-center mt-8 sm:mt-12 lg:mt-16"
         >
           <Link
             href="/services"
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-primary to-primary-light text-white rounded-2xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-xl shadow-primary/30"
+            className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-10 py-3 sm:py-5 bg-gradient-to-r from-primary to-primary-light text-white rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-xl shadow-primary/30"
           >
             Смотреть все услуги
-            <ArrowRight className="w-6 h-6" />
+            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </Link>
         </motion.div>
       </div>
