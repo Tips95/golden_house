@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import { ArrowRight, Phone, MapPin, CheckCircle } from 'lucide-react'
 
 const COMPANY_INFO = {
-  location: 'Грозный',
-  distance: '10 мин. до центра',
+  location: 'СКФО и Москва',
+  distance: 'Работаем по всему региону',
   title: '«GOLDENHOUSE» ЭЛИТНОЕ СТРОИТЕЛЬСТВО',
   subtitle: 'Профессиональные строительные услуги под ключ – безупречное качество в любое время года',
   benefits: [

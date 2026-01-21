@@ -13,7 +13,7 @@ export default function PortfolioHero() {
         >
           <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 tracking-tight">Наши проекты</h1>
           <p className="text-xl lg:text-2xl text-white/90">
-            Более 500 завершённых объектов в Грозном и ЧР. Смотрите реальные фотографии работ
+            Более 500 завершённых объектов по СКФО и Москве. Смотрите реальные фотографии работ
             и читайте отзывы клиентов.
           </p>
         </motion.div>

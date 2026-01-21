@@ -51,7 +51,7 @@ export default function CTASection() {
               </a>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 sm:pt-8 border-t border-white/20">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 pt-6 sm:pt-8 border-t border-white/20">
               <div>
                 <div className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Бесплатно</div>
                 <div className="text-xs sm:text-base text-neutral-300">Выезд замерщика</div>
@@ -63,6 +63,10 @@ export default function CTASection() {
               <div>
                 <div className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">15 минут</div>
                 <div className="text-xs sm:text-base text-neutral-300">Ответ менеджера</div>
+              </div>
+              <div>
+                <div className="text-lg sm:text-2xl font-bold mb-1 sm:mb-2">Рассрочка</div>
+                <div className="text-xs sm:text-base text-neutral-300">Для ЧР без переплат</div>
               </div>
             </div>
           </motion.div>

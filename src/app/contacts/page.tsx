@@ -5,7 +5,7 @@ import { formatPhoneNumber } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Контакты',
-  description: 'Свяжитесь с нами: телефон, WhatsApp, email, адрес офиса в Грозном. Работаем ежедневно.',
+  description: 'Свяжитесь с нами: телефон, WhatsApp, email, адрес офиса. Работаем по СКФО и Москве ежедневно.',
 }
 
 const CONTACTS = {

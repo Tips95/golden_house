@@ -81,15 +81,18 @@ export default function Header() {
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center transition-transform hover:scale-105">
-            <Image
-              src="/images/logo-goldenhouse.png"
-              alt="GoldenHouse Services"
-              width={320}
-              height={107}
-              priority
-              className="h-12 sm:h-16 lg:h-20 w-auto"
-            />
+          <Link href="/" className="flex items-center transition-transform hover:scale-105 group">
+            <div className="relative">
+              <div className="absolute -inset-2 bg-accent-orange/20 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Image
+                src="/images/logo-goldenhouse.png"
+                alt="GoldenHouse Services"
+                width={320}
+                height={107}
+                priority
+                className="relative h-12 sm:h-16 lg:h-20 w-auto drop-shadow-lg"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

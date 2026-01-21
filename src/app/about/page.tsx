@@ -20,7 +20,7 @@ const FEATURES = [
   {
     icon: TrendingUp,
     title: '500+ проектов',
-    description: 'Успешно завершённых объектов в Грозном и ЧР',
+    description: 'Успешно завершённых объектов по СКФО и Москве',
   },
   {
     icon: Target,

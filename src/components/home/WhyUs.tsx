@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Shield, Users, Clock, Award, TrendingUp, Headphones } from 'lucide-react'
+import { Shield, Users, Clock, Award, TrendingUp, Headphones, CreditCard } from 'lucide-react'
 
 const FEATURES = [
   {
@@ -33,6 +33,11 @@ const FEATURES = [
     icon: Headphones,
     title: 'Поддержка 24/7',
     description: 'Личный менеджер на связи. Контроль качества на каждом этапе.',
+  },
+  {
+    icon: CreditCard,
+    title: 'Рассрочка',
+    description: 'Рассрочка без переплат для клиентов из Чеченской Республики. Удобные условия оплаты.',
   },
 ]
 
