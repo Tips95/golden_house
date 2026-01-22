@@ -8,8 +8,10 @@ export default function PlasterCalculator() {
   const [area, setArea] = useState(100)
   const [thickness, setThickness] = useState(20)
   const [includesCeiling, setIncludesCeiling] = useState(false)
+  const [withMaterial, setWithMaterial] = useState(false)
+  const [priceWithMaterial, setPriceWithMaterial] = useState(550) // цена с материалом по умолчанию
 
-  const PRICE_PER_SQM = 320
+  const PRICE_PER_SQM = 350 // цена за работу без материала
   const CEILING_COEFFICIENT = 1.4
   const STANDARD_THICKNESS = 20 // стандартная толщина слоя в мм
   const BAGS_PER_2SQM = 1 // 1 мешок на 2 кв.м при стандартной толщине
@@ -33,7 +35,9 @@ export default function PlasterCalculator() {
   }
 
   const calculatePrice = () => {
-    let basePrice = area * PRICE_PER_SQM
+    // Выбираем базовую цену в зависимости от выбора "с материалом" или "без"
+    const basePricePerSqm = withMaterial ? priceWithMaterial : PRICE_PER_SQM
+    let basePrice = area * basePricePerSqm
     
     if (includesCeiling) {
       basePrice = basePrice * CEILING_COEFFICIENT
@@ -46,6 +50,10 @@ export default function PlasterCalculator() {
     }
     
     return basePrice
+  }
+
+  const getBasePricePerSqm = () => {
+    return withMaterial ? priceWithMaterial : PRICE_PER_SQM
   }
 
   const totalBags = calculateMaterials()
@@ -115,6 +123,42 @@ export default function PlasterCalculator() {
               Включить штукатурку потолков (+40%)
             </label>
           </div>
+
+          <div className="border-t border-neutral-200 pt-4 sm:pt-6 space-y-4">
+            <div className="flex items-start space-x-2 sm:space-x-3">
+              <input
+                type="checkbox"
+                id="withMaterial"
+                checked={withMaterial}
+                onChange={e => setWithMaterial(e.target.checked)}
+                className="w-4 h-4 sm:w-5 sm:h-5 text-accent-orange bg-neutral-100 border-neutral-300 rounded focus:ring-accent-orange focus:ring-2 mt-0.5"
+              />
+              <label htmlFor="withMaterial" className="text-xs sm:text-sm font-medium text-primary cursor-pointer">
+                Расчёт с материалом
+              </label>
+            </div>
+
+            {withMaterial && (
+              <div className="ml-6 sm:ml-8">
+                <label className="block text-xs sm:text-sm font-semibold text-primary mb-2">
+                  Цена с материалом (₽/м²)
+                </label>
+                <input
+                  type="number"
+                  min="350"
+                  max="2000"
+                  step="10"
+                  value={priceWithMaterial}
+                  onChange={e => setPriceWithMaterial(Number(e.target.value))}
+                  className="w-full px-3 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent-orange focus:border-accent-orange text-sm"
+                  placeholder="550"
+                />
+                <p className="text-xs text-neutral-500 mt-1">
+                  Текущая цена: {formatPrice(PRICE_PER_SQM)}/м² (без материала)
+                </p>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Results */}
@@ -139,8 +183,10 @@ export default function PlasterCalculator() {
                 <span className="font-semibold">{totalBags} шт</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="opacity-90">Базовая цена:</span>
-                <span className="font-semibold">{formatPrice(PRICE_PER_SQM)}/м²</span>
+                <span className="opacity-90">
+                  {withMaterial ? 'Цена с материалом:' : 'Цена за работу:'}
+                </span>
+                <span className="font-semibold">{formatPrice(getBasePricePerSqm())}/м²</span>
               </div>
               {hasOverspend && (
                 <div className="flex justify-between text-sm">

@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 
 const FACADE_MATERIALS = [
   { id: 'ceramic', name: 'Керамогранит', price: 3200 },
-  { id: 'composite', name: 'Алюкобонд + (Композит)', price: 2800 },
+  { id: 'composite', name: 'Алюкобонд (Композит)', price: 2800 },
   { id: 'fiber', name: 'Фиброцементные панели', price: 2400 },
   { id: 'hpl', name: 'HPL-панели', price: 3500 },
 ]
