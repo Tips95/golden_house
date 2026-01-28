@@ -167,34 +167,22 @@ export default function ServicesByCategory() {
                                         transition={{ duration: 0.2 }}
                                         className="overflow-hidden"
                                       >
-                                        <Link
-                                          href={`/services/${service.slug}`}
-                                          className="block px-3 sm:px-4 pb-3 sm:pb-4 pt-0 group/link"
-                                        >
-                                          <div className="bg-gradient-to-r from-accent-orange/10 to-yellow-500/10 rounded-lg p-3 border border-accent-orange/20 hover:border-accent-orange hover:shadow-md transition-all">
-                                            <div className="flex items-center justify-between">
-                                              <div className="flex items-baseline gap-1">
-                                                {service.priceFrom ? (
-                                                  <>
-                                                    <span className="text-xs text-neutral-500">от</span>
-                                                    <span className="text-base sm:text-lg text-accent-orange font-bold">
-                                                      {formatPrice(service.priceFrom)}
-                                                    </span>
-                                                    <span className="text-xs text-neutral-500">/{service.priceUnit}</span>
-                                                  </>
-                                                ) : (
-                                                  <span className="text-sm text-neutral-600 font-medium">
-                                                    Цена по запросу
-                                                  </span>
-                                                )}
-                                              </div>
-                                              <div className="flex items-center gap-1 text-accent-orange group-hover/link:translate-x-1 transition-transform">
-                                                <span className="text-xs font-medium">Подробнее</span>
-                                                <ArrowRight className="w-3 h-3" />
-                                              </div>
-                                            </div>
+                                        <div className="px-3 sm:px-4 pb-3 sm:pb-4 pt-0">
+                                          <div className="bg-gradient-to-r from-accent-orange/10 to-yellow-500/10 rounded-lg p-3 border border-accent-orange/20">
+                                            {/* Описание с ценами */}
+                                            <p className="text-xs sm:text-sm text-neutral-700 mb-3 leading-relaxed">
+                                              {service.shortDescription}
+                                            </p>
+                                            {/* Ссылка на подробности */}
+                                            <Link
+                                              href={`/services/${service.slug}`}
+                                              className="inline-flex items-center gap-1 text-accent-orange hover:text-accent-orange/80 transition-colors group/link"
+                                            >
+                                              <span className="text-xs sm:text-sm font-medium">Подробнее об услуге</span>
+                                              <ArrowRight className="w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+                                            </Link>
                                           </div>
-                                        </Link>
+                                        </div>
                                       </motion.div>
                                     )}
                                   </AnimatePresence>
