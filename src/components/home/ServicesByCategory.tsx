@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Building2, Shield, Lightbulb, Brush, Mountain, Home, Flame, Building, DoorOpen, Crown, Zap, ChevronDown } from 'lucide-react'
+import { ArrowRight, Building2, Shield, Lightbulb, Brush, Mountain, Home, Flame, Building, DoorOpen, Crown, Zap, ChevronDown, Camera, Phone, KeyRound, Monitor } from 'lucide-react'
 import { serviceCategories, getServicesByCategory } from '@/data/services'
 import { formatPrice } from '@/lib/utils'
 
@@ -19,6 +19,10 @@ const iconMap = {
   DoorOpen,
   Zap,
   Shield,
+  Camera,
+  Phone,
+  KeyRound,
+  Monitor,
 }
 
 const categoryIcons = {

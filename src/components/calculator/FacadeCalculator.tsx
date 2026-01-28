@@ -5,10 +5,11 @@ import { formatPrice } from '@/lib/utils'
 import { ArrowRight } from 'lucide-react'
 
 const FACADE_MATERIALS = [
+  { id: 'dagestan', name: 'Дагестанский камень', price: 1200 },
+  { id: 'klinker', name: 'Клинкер', price: 1500 },
   { id: 'ceramic', name: 'Керамогранит', price: 3200 },
-  { id: 'composite', name: 'Алюкобонд (Композит)', price: 2800 },
-  { id: 'fiber', name: 'Фиброцементные панели', price: 2400 },
-  { id: 'hpl', name: 'HPL-панели', price: 3500 },
+  { id: 'natural', name: 'Натуральный камень (нохчи т1улг)', price: 3500 },
+  { id: 'composite', name: 'Алюкобонд (Композит)', price: 3800 },
 ]
 
 export default function FacadeCalculator() {
