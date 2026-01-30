@@ -27,27 +27,23 @@ export default function Header() {
           setIsScrolled(currentScrollY > 20)
 
           // Логика скрытия/показа шапки на мобильных устройствах
-          if (window.innerWidth < 1024) { // lg breakpoint
+          // Не скрываем шапку, когда открыто мобильное меню — иначе меню сворачивается при скролле списка услуг
+          if (window.innerWidth < 1024 && !isMobileMenuOpen) {
             const scrollDifference = Math.abs(currentScrollY - lastScrollY)
             
-            // Минимальный порог прокрутки для срабатывания (5px)
             if (scrollDifference < 5) {
               ticking = false
               return
             }
 
             if (currentScrollY < 10) {
-              // В самом верху - всегда показываем
               setIsHeaderVisible(true)
             } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
-              // Прокрутка вниз и уже проскроллили больше 50px - скрываем
               setIsHeaderVisible(false)
             } else if (currentScrollY < lastScrollY) {
-              // Прокрутка вверх - показываем
               setIsHeaderVisible(true)
             }
           } else {
-            // На десктопе всегда показываем
             setIsHeaderVisible(true)
           }
 
@@ -60,7 +56,7 @@ export default function Header() {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+  }, [lastScrollY, isMobileMenuOpen])
 
   const navigation = [
     { name: 'Услуги', href: '/services', hasDropdown: true },
