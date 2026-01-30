@@ -43,7 +43,7 @@ const featuredServices = [
     shadowColor: 'shadow-yellow-500/30',
     slug: 'naruzhnaya-reklama',
     features: ['Яркие вывески', 'LED технологии', 'Индивидуальный дизайн'],
-    image: '/images/services/signage-hero.png',
+    image: '/images/services/outdoor-advertising.png',
   },
   {
     id: '4',

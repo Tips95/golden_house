@@ -946,7 +946,7 @@ export const services: ServiceData[] = [
     fullDescription: 'Установка видеодомофонов для частных домов, квартир и подъездов. Современные модели с Wi-Fi, записью видео, датчиками движения. Бренды: Atis, Hikvision, Eltis.',
     heroTitle: 'Домофоны и видеодомофоны',
     heroSubtitle: 'Видеодомофоны с Wi-Fi и записью. Atis, Hikvision, Eltis. Для дома и подъезда',
-    priceFrom: 25000,
+    priceFrom: 7000,
     priceUnit: 'комплект',
     image: '/images/services/security-hero.jpg',
     icon: 'Phone',
@@ -972,8 +972,8 @@ export const services: ServiceData[] = [
       { title: 'Настройка', description: 'Подключение Wi-Fi, настройка приложения', duration: '0.5 дня' },
     ],
     pricing: [
-      { name: 'Видеодомофон базовый', price: 25000, unit: 'комплект', description: 'Панель + монитор 7" + установка' },
-      { name: 'Видеодомофон с Wi-Fi', price: 35000, unit: 'комплект', description: 'Панель + монитор + Wi-Fi + установка' },
+      { name: 'Видеодомофон базовый', price: 7000, unit: 'комплект', description: 'Панель + монитор 7" + установка' },
+      { name: 'Видеодомофон с Wi-Fi', price: 12000, unit: 'комплект', description: 'Панель + монитор + Wi-Fi + установка' },
       { name: 'Подъездный домофон', price: null, unit: 'подъезд', description: 'Расчёт по количеству абонентов' },
     ],
     faq: [
@@ -1145,7 +1145,7 @@ export const services: ServiceData[] = [
     heroSubtitle: 'Светящиеся буквы от 70 ₽/см, LED-экраны от 1700 ₽/м². Собственное производство. Согласование. Монтаж за 1 день',
     priceFrom: 70,
     priceUnit: 'см',
-    image: '/images/services/signage-hero.jpg',
+    image: '/images/services/outdoor-advertising.png',
     icon: 'Lightbulb',
     benefits: [
       'Полный цикл: дизайн → производство → монтаж → согласование',
