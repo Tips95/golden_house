@@ -100,7 +100,7 @@ export default function ServicesByCategory() {
                       <CategoryIcon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold bg-gradient-to-r from-accent-orange to-yellow-600 bg-clip-text text-transparent">
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-primary">
                         {category.name}
                       </h3>
                       <p className="text-neutral-500 text-xs sm:text-sm mt-1 line-clamp-1">

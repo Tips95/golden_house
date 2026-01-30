@@ -76,9 +76,9 @@ export default function Header() {
     >
       <nav className="container-custom">
         <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
-          {/* Logo */}
-          <Link href="/" className="flex items-center transition-transform hover:scale-105 group">
-            <div className="relative">
+          {/* Logo + название компании */}
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 transition-transform hover:scale-[1.02] group">
+            <div className="relative flex-shrink-0">
               <div className="absolute -inset-2 bg-accent-orange/20 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
               <Image
                 src="/images/logo-goldenhouse.png"
@@ -89,6 +89,9 @@ export default function Header() {
                 className="relative h-12 sm:h-16 lg:h-20 w-auto drop-shadow-lg"
               />
             </div>
+            <span className="text-base sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-accent-orange to-yellow-600 bg-clip-text text-transparent group-hover:from-accent-orange/90 group-hover:to-yellow-500 transition-all whitespace-nowrap">
+              GoldenHouse
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
