@@ -15,8 +15,8 @@ const BENEFITS = [
 export default function HomeHero() {
   return (
     <section className="relative overflow-hidden min-h-[60vh] sm:min-h-[70vh] lg:min-h-[75vh] flex items-center bg-neutral-900">
-      {/* Фоновое изображение - дом в процессе строительства */}
-      <div className="absolute inset-0">
+      {/* Фоновое изображение - дом в процессе строительства (чуть прозрачное) */}
+      <div className="absolute inset-0 opacity-80">
         <Image
           src="/images/hero/Gemini_Generated_Image_d28ahhd28ahhd28a.png"
           alt="Строительство дома"
@@ -28,23 +28,20 @@ export default function HomeHero() {
         />
       </div>
       
-      {/* Градиентный оверлей: темнее слева (где текст), светлее справа (где фон) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/85 via-neutral-900/60 to-neutral-900/20" />
-      
-      {/* Размытие под текстом для читаемости */}
-      <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/40 via-transparent to-transparent backdrop-blur-[2px]" />
+      {/* Лёгкий оверлей по всему экрану — фон максимально прозрачный */}
+      <div className="absolute inset-0 bg-gradient-to-r from-neutral-900/50 via-neutral-900/35 to-neutral-900/10" />
 
       <div className="container-custom py-8 sm:py-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content - слева */}
+          {/* Content - слева: под текстом затемнение для читаемости */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="relative lg:max-w-2xl"
           >
-            {/* Дополнительное размытие и затемнение под текстовым блоком */}
-            <div className="absolute -inset-6 bg-neutral-900/30 backdrop-blur-md rounded-2xl -z-10" />
+            {/* Затемнение и размытие только под надписями — сохраняем читаемость */}
+            <div className="absolute -inset-6 bg-neutral-900/55 backdrop-blur-md rounded-2xl -z-10" />
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 lg:mb-8 text-white">
               <span className="w-2 h-2 bg-accent-orange rounded-full animate-pulse" />
               <span className="hidden lg:inline">Профессиональное строительство по СКФО и Москве</span>

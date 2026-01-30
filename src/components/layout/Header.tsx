@@ -75,9 +75,9 @@ export default function Header() {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
-          {/* Logo + название компании */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 transition-transform hover:scale-[1.02] group">
+        <div className="flex items-center justify-between h-20 sm:h-20 lg:h-24">
+          {/* Logo + название компании — на мобильных крупнее, заполняют шапку */}
+          <Link href="/" className="flex items-center gap-3 sm:gap-3 flex-1 min-w-0 lg:flex-initial transition-transform hover:scale-[1.02] group">
             <div className="relative flex-shrink-0">
               <div className="absolute -inset-2 bg-accent-orange/20 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
               <Image
@@ -86,12 +86,17 @@ export default function Header() {
                 width={320}
                 height={107}
                 priority
-                className="relative h-12 sm:h-16 lg:h-20 w-auto drop-shadow-lg"
+                className="relative h-14 sm:h-16 lg:h-20 w-auto drop-shadow-lg"
               />
             </div>
-            <span className="text-base sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-accent-orange to-yellow-600 bg-clip-text text-transparent group-hover:from-accent-orange/90 group-hover:to-yellow-500 transition-all whitespace-nowrap">
-              GoldenHouse
-            </span>
+            <div className="flex flex-col items-center">
+              <span className="text-xl sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-accent-orange to-yellow-600 bg-clip-text text-transparent group-hover:from-accent-orange/90 group-hover:to-yellow-500 transition-all whitespace-nowrap">
+                GoldenHouse
+              </span>
+              <span className="text-[10px] sm:text-xs text-neutral-500 font-medium tracking-wide mt-0.5">
+                service&apos;s
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
