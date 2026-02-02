@@ -10,9 +10,11 @@ export default function PlasterCalculator() {
   const [includesCeiling, setIncludesCeiling] = useState(false)
   const [withMaterial, setWithMaterial] = useState(false)
   const [priceWithMaterial, setPriceWithMaterial] = useState(550) // цена с материалом по умолчанию
+  const [withDiagonals, setWithDiagonals] = useState(false)
 
   const PRICE_PER_SQM = 350 // цена за работу без материала
   const CEILING_COEFFICIENT = 1.4
+  const DIAGONAL_ADD_PER_SQM = 150 // работа с диагоналями под 90°
   const STANDARD_THICKNESS = 20 // стандартная толщина слоя в мм
   const BAGS_PER_2SQM = 1 // 1 мешок на 2 кв.м при стандартной толщине
   const OVERSPEND_COEFFICIENT = 1.3 // перерасход 30% при толщине > 20 мм
@@ -47,6 +49,11 @@ export default function PlasterCalculator() {
     if (thickness > STANDARD_THICKNESS) {
       const extraCostPercent = ((thickness - STANDARD_THICKNESS) / STANDARD_THICKNESS) * 0.3
       basePrice = basePrice * (1 + extraCostPercent)
+    }
+
+    // Работа с диагоналями под 90°: +150 ₽/м²
+    if (withDiagonals) {
+      basePrice += area * DIAGONAL_ADD_PER_SQM
     }
     
     return basePrice
@@ -121,6 +128,19 @@ export default function PlasterCalculator() {
             />
             <label htmlFor="ceiling" className="text-xs sm:text-sm font-medium text-primary cursor-pointer">
               Включить штукатурку потолков (+40%)
+            </label>
+          </div>
+
+          <div className="flex items-start space-x-2 sm:space-x-3">
+            <input
+              type="checkbox"
+              id="diagonals"
+              checked={withDiagonals}
+              onChange={e => setWithDiagonals(e.target.checked)}
+              className="w-4 h-4 sm:w-5 sm:h-5 text-accent-orange bg-neutral-100 border-neutral-300 rounded focus:ring-accent-orange focus:ring-2 mt-0.5"
+            />
+            <label htmlFor="diagonals" className="text-xs sm:text-sm font-medium text-primary cursor-pointer">
+              Работа с диагоналями под 90° (+150 ₽/м²)
             </label>
           </div>
 
@@ -200,6 +220,12 @@ export default function PlasterCalculator() {
                 <div className="flex justify-between text-sm">
                   <span className="opacity-90">Потолки:</span>
                   <span className="font-semibold">+40%</span>
+                </div>
+              )}
+              {withDiagonals && (
+                <div className="flex justify-between text-sm">
+                  <span className="opacity-90">Диагонали 90°:</span>
+                  <span className="font-semibold">+{formatPrice(DIAGONAL_ADD_PER_SQM)}/м²</span>
                 </div>
               )}
             </div>

@@ -5,7 +5,22 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Brush, Mountain, Lightbulb, Shield } from 'lucide-react'
 
-const featuredServices = [
+interface FeaturedService {
+  id: string
+  title: string
+  description: string
+  icon: typeof Brush
+  price: string
+  unit: string
+  gradient: string
+  shadowColor: string
+  slug: string
+  features: string[]
+  image: string
+  promo?: boolean
+}
+
+const featuredServices: FeaturedService[] = [
   {
     id: '1',
     title: 'Механизированная штукатурка',
@@ -18,6 +33,7 @@ const featuredServices = [
     slug: 'mekhanizirovannaya-shtukaturka',
     features: ['Идеально ровная поверхность', 'Быстрое выполнение', 'Гарантия качества'],
     image: '/images/services/plaster-hero.png',
+    promo: true,
   },
   {
     id: '2',
@@ -31,6 +47,7 @@ const featuredServices = [
     slug: 'fasadnye-raboty',
     features: ['Энергоэффективность', 'Современный дизайн', 'Защита от влаги'],
     image: '/images/services/security-hero.png',
+    promo: false,
   },
   {
     id: '3',
@@ -44,6 +61,7 @@ const featuredServices = [
     slug: 'naruzhnaya-reklama',
     features: ['Яркие вывески', 'LED технологии', 'Индивидуальный дизайн'],
     image: '/images/services/outdoor-advertising.png',
+    promo: false,
   },
   {
     id: '4',
@@ -57,6 +75,7 @@ const featuredServices = [
     slug: 'sistemy-bezopasnosti',
     features: ['Круглосуточная защита', 'Современное оборудование', 'Полная автоматизация'],
     image: '/images/services/facade-hero.png',
+    promo: false,
   },
 ]
 
@@ -121,7 +140,13 @@ export default function FeaturedServices() {
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500 blur-xl`} />
                   
-                  <div className="relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                  <div className={`relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden ${service.promo ? 'ring-2 sm:ring-[3px] ring-accent-orange ring-offset-2 sm:ring-offset-3 shadow-xl shadow-accent-orange/25' : ''}`}>
+                    {/* Бейдж «Акция» */}
+                    {service.promo && (
+                      <div className="absolute top-3 right-3 z-10 px-5 py-2.5 bg-gradient-to-r from-accent-orange to-orange-500 text-white text-base sm:text-lg font-bold uppercase tracking-widest rounded-xl shadow-xl shadow-accent-orange/50 ring-2 ring-white/90 animate-pulse">
+                        Акция
+                      </div>
+                    )}
                     {/* Фото */}
                     {service.image ? (
                       <div className="relative w-full aspect-[4/3] overflow-hidden">
@@ -163,7 +188,7 @@ export default function FeaturedServices() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-8 sm:mt-12 lg:mt-16"
+          className="text-center mt-8 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
         >
           <Link
             href="/services"
@@ -172,6 +197,15 @@ export default function FeaturedServices() {
             Смотреть все услуги
             <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </Link>
+          <a
+            href="https://wa.me/79281958885"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-10 py-3 sm:py-5 text-base sm:text-lg"
+          >
+            Рассчитать стоимость
+            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </a>
         </motion.div>
       </div>
     </section>

@@ -40,8 +40,8 @@ export default function HomeHero() {
             transition={{ duration: 0.8 }}
             className="relative lg:max-w-2xl"
           >
-            {/* Затемнение и размытие только под надписями — сохраняем читаемость */}
-            <div className="absolute -inset-6 bg-neutral-900/55 backdrop-blur-md rounded-2xl -z-10" />
+            {/* Затемнение и размытие только под надписями — на 50% прозрачнее */}
+            <div className="absolute -inset-6 bg-neutral-900/28 backdrop-blur-md rounded-2xl -z-10" />
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold mb-4 sm:mb-6 lg:mb-8 text-white">
               <span className="w-2 h-2 bg-accent-orange rounded-full animate-pulse" />
               <span className="hidden lg:inline">Профессиональное строительство по СКФО и Москве</span>
@@ -77,14 +77,6 @@ export default function HomeHero() {
             </ul>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <a
-                href="https://wa.me/79281958885"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-base sm:text-lg px-6 sm:px-10 py-3 sm:py-4 inline-flex items-center justify-center"
-              >
-                Рассчитать стоимость <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-              </a>
               <a
                 href="#services"
                 className="inline-flex items-center justify-center rounded-xl border-2 border-white/30 bg-white/10 backdrop-blur-md px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white transition-all hover:bg-white/20 hover:border-white/50 hover:-translate-y-0.5 active:scale-95"
