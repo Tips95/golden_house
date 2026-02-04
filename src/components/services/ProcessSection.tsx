@@ -83,9 +83,14 @@ export default function ProcessSection({ steps, title = 'Как мы работ�
                 Работаем по договору с фиксацией сроков. Гарантия на все виды работ от 1 до 3 лет.
               </p>
             </div>
-            <button className="btn-primary whitespace-nowrap">
+            <a
+              href="https://wa.me/79281958885"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary whitespace-nowrap inline-block"
+            >
               Обсудить проект
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

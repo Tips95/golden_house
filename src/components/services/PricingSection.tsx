@@ -128,9 +128,14 @@ export default function PricingSection({ pricing, title = 'Прозрачные 
           viewport={{ once: true }}
           className="mt-8 text-center"
         >
-          <button className="btn-primary text-lg px-10 py-4">
+          <a
+            href="https://wa.me/79281958885"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-lg px-10 py-4 inline-block"
+          >
             Получить точный расчёт
-          </button>
+          </a>
           <p className="text-sm text-neutral-600 mt-4">
             Выезд замерщика бесплатно. Смета в течение 2 часов.
           </p>

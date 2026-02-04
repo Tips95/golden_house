@@ -143,7 +143,7 @@ export default function FeaturedServices() {
                   <div className={`relative bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden ${service.promo ? 'ring-2 sm:ring-[3px] ring-accent-orange ring-offset-2 sm:ring-offset-3 shadow-xl shadow-accent-orange/25' : ''}`}>
                     {/* Бейдж «Акция» */}
                     {service.promo && (
-                      <div className="absolute top-3 right-3 z-10 px-5 py-2.5 bg-gradient-to-r from-accent-orange to-orange-500 text-white text-base sm:text-lg font-bold uppercase tracking-widest rounded-xl shadow-xl shadow-accent-orange/50 ring-2 ring-white/90 animate-pulse">
+                      <div className="absolute top-3 right-3 z-10 px-5 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white text-base sm:text-lg font-bold uppercase tracking-widest rounded-xl shadow-xl shadow-red-500/50 ring-2 ring-white/90 animate-pulse">
                         Акция
                       </div>
                     )}

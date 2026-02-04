@@ -240,10 +240,15 @@ export default function PlasterCalculator() {
               </div>
             </div>
 
-            <button className="w-full bg-accent-orange hover:bg-accent-orange/90 text-white font-semibold py-2.5 sm:py-3 rounded-lg transition-colors flex items-center justify-center space-x-2 text-sm sm:text-base">
+            <a
+              href="https://wa.me/79281958885"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-accent-orange hover:bg-accent-orange/90 text-white font-semibold py-2.5 sm:py-3 rounded-lg transition-colors flex items-center justify-center space-x-2 text-sm sm:text-base"
+            >
               <span>Заказать расчёт</span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-            </button>
+            </a>
 
             <p className="text-xs opacity-75 text-center mt-2 sm:mt-3">
               * Точная стоимость рассчитывается после замера

@@ -172,10 +172,15 @@ export default function SignageCalculator() {
               <div className="text-4xl font-bold">{formatPrice(totalPrice)}</div>
             </div>
 
-            <button className="w-full bg-white hover:bg-neutral-100 text-accent-orange font-semibold py-3 rounded-lg transition-colors flex items-center justify-center space-x-2">
+            <a
+              href="https://wa.me/79281958885"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-white hover:bg-neutral-100 text-accent-orange font-semibold py-3 rounded-lg transition-colors flex items-center justify-center space-x-2"
+            >
               <span>Заказать вывеску</span>
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </a>
 
             <p className="text-xs opacity-75 text-center mt-3">
               * Бесплатная 3D-визуализация при заказе

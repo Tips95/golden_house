@@ -196,10 +196,15 @@ export default function FacadeCalculator() {
               <div className="text-3xl sm:text-4xl font-bold">{formatPrice(totalPrice)}</div>
             </div>
 
-            <button className="w-full bg-accent-orange hover:bg-accent-orange/90 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center space-x-2">
+            <a
+              href="https://wa.me/79281958885"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-accent-orange hover:bg-accent-orange/90 text-white font-semibold py-3 rounded-lg transition-colors flex items-center justify-center space-x-2"
+            >
               <span>Заказать расчёт</span>
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </a>
 
             <p className="text-xs opacity-75 text-center mt-3">
               * В стоимость входит: подсистема{withInsulation ? ' + утеплитель' : ''} + облицовка

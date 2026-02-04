@@ -103,9 +103,14 @@ export default function FAQSection({ faqs, title = 'Часто задаваем�
             <a href="tel:+79281958885" className="btn-primary">
               Позвонить сейчас
             </a>
-            <button className="btn-secondary">
+            <a
+              href="https://wa.me/79281958885"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary inline-block"
+            >
               Задать вопрос
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

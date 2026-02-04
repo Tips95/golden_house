@@ -76,9 +76,9 @@ export default function CasesSection({ cases }: CasesSectionProps) {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <button className="btn-secondary text-lg px-10 py-4">
+          <a href="/portfolio" className="btn-secondary text-lg px-10 py-4 inline-block">
             Смотреть все проекты
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
