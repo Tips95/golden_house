@@ -32,49 +32,49 @@ const featuredServices: FeaturedService[] = [
     shadowColor: 'shadow-blue-500/30',
     slug: 'mekhanizirovannaya-shtukaturka',
     features: ['Идеально ровная поверхность', 'Быстрое выполнение', 'Гарантия качества'],
-    image: '/images/services/plaster-hero.png',
+    image: '/images/services/main-shtukaturka.png',
     promo: true,
   },
   {
     id: '2',
-    title: 'Вентилируемый фасад',
-    description: 'Композитные панели, керамогранит, навесные системы. Долговечность более 50 лет',
+    title: 'Строительство домов',
+    description: 'Надёжность и качество, современные технологии, индивидуальный проект, строим под ключ',
     icon: Mountain,
-    price: '1500',
+    price: '45000',
     unit: 'м²',
     gradient: 'from-orange-500 to-red-500',
     shadowColor: 'shadow-orange-500/30',
-    slug: 'fasadnye-raboty',
-    features: ['Энергоэффективность', 'Современный дизайн', 'Защита от влаги'],
-    image: '/images/services/security-hero.png',
+    slug: 'stroitelstvo-domov',
+    features: ['Индивидуальный проект', 'Современные технологии', 'Строим под ключ'],
+    image: '/images/services/main-doma.png',
     promo: false,
   },
   {
     id: '3',
     title: 'Рекламное агентство',
-    description: 'Наружная реклама, светящиеся буквы, LED-экраны, подсветка лестниц и ниш',
+    description: 'Наружная вывеска, светящиеся буквы, световой короб — услуги под ключ',
     icon: Lightbulb,
     price: '70',
     unit: 'см',
     gradient: 'from-yellow-500 to-amber-500',
     shadowColor: 'shadow-yellow-500/30',
     slug: 'naruzhnaya-reklama',
-    features: ['Яркие вывески', 'LED технологии', 'Индивидуальный дизайн'],
-    image: '/images/services/outdoor-advertising.png',
+    features: ['Наружная вывеска', 'Светящиеся буквы', 'Световой короб'],
+    image: '/images/services/main-reklama.png',
     promo: false,
   },
   {
     id: '4',
-    title: 'Безопасность и автоматика',
-    description: 'Видеонаблюдение, домофоны, СКУД, автоматика для ворот и шлагбаумы',
+    title: 'Видеонаблюдение',
+    description: 'Качественное изображение, онлайн-просмотр через приложение, комплект полной установки',
     icon: Shield,
     price: 'по запросу',
     unit: '',
     gradient: 'from-purple-500 to-indigo-500',
     shadowColor: 'shadow-purple-500/30',
-    slug: 'sistemy-bezopasnosti',
-    features: ['Круглосуточная защита', 'Современное оборудование', 'Полная автоматизация'],
-    image: '/images/services/facade-hero.png',
+    slug: 'videonablyudenie',
+    features: ['Качественное изображение', 'Онлайн-просмотр', 'Полная установка'],
+    image: '/images/services/main-videonablyudenie.png',
     promo: false,
   },
 ]
@@ -151,7 +151,7 @@ export default function FeaturedServices() {
                     )}
                     {/* Фото */}
                     {service.image ? (
-                      <div className="relative w-full aspect-[4/3] overflow-hidden">
+                      <div className="relative w-full aspect-[3/4] overflow-hidden">
                         <Image
                           src={service.image}
                           alt={service.title}

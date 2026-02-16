@@ -290,6 +290,11 @@ export const services: ServiceData[] = [
     portfolioImages: [
       { image: '/images/portfolio/facade/dagestan-stone-2.png' },
       { image: '/images/portfolio/facade/dagestan-stone-3.png' },
+      { 
+        image: '/images/portfolio/facade/dagestan-stone-promo.png',
+        title: 'Дагестанский камень — облицовка фасадов под ключ',
+        description: 'Натуральный дагестанский камень, изысканный внешний вид фасада, профессиональный монтаж'
+      },
       { image: '/images/portfolio/facade/klinker-1.png' },
       { image: '/images/portfolio/facade/facade-3.png' },
       { image: '/images/portfolio/facade/facade-4.png' },
@@ -385,6 +390,28 @@ export const services: ServiceData[] = [
       {
         question: 'Нужно ли мне покупать материалы?',
         answer: 'Нет, мы закупаем все материалы сами с дилерской скидкой 15-20%. Вы оплачиваете материалы по фактической стоимости.',
+      },
+    ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/remont/natyazhnye-potolki.png',
+        title: 'Натяжные потолки',
+        description: 'Современный и стильный вид, быстрый монтаж, простота ухода'
+      },
+      {
+        image: '/images/portfolio/lestnitsy/lestnitsa-promo.png',
+        title: 'Лестница под ключ',
+        description: 'Изготовим и установим, высокое качество, быстро и удобно'
+      },
+      {
+        image: '/images/portfolio/lestnitsy/derevyannaya-lestnitsa.png',
+        title: 'Деревянные лестницы',
+        description: 'Красиво и надежно, индивидуальное изготовление, монтаж под ключ'
+      },
+      {
+        image: '/images/portfolio/remont/remont-kvartir-promo.png',
+        title: 'Ремонт квартир под ключ',
+        description: 'Дизайн и проектирование, качественные материалы, точные сроки сдачи, фиксированная смета, гарантия до 5 лет'
       },
     ],
     metaTitle: 'Ремонт квартир под ключ в Грозном от 20 000 ₽/м² | Гарантия 3 года',
@@ -483,6 +510,13 @@ export const services: ServiceData[] = [
         answer: 'Да, строим круглый год. Используем противоморозные добавки в бетон и подогрев при температуре ниже -15°C.',
       },
     ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/doma/dom-promo.png',
+        title: 'Строительство домов',
+        description: 'Надёжность и качество, современные технологии, индивидуальный проект, строим под ключ'
+      },
+    ],
     metaTitle: 'Строительство домов в Грозном от 45 000 ₽/м² | Дома под ключ',
     metaDescription: 'Строительство загородных домов и коттеджей: каркасные, из газобетона, кирпича. Проект в подарок. Гарантия 10 лет. Поэтапная оплата.',
     keywords: ['строительство домов', 'дома под ключ', 'каркасные дома', 'коттеджи'],
@@ -577,6 +611,13 @@ export const services: ServiceData[] = [
       {
         question: 'Сколько стоит монтаж котельной?',
         answer: 'Котельная для дома 150-200 м² — от 250 000 ₽ (котёл + обвязка + дымоход + автоматика). Точная цена зависит от оборудования.',
+      },
+    ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/otoplenie/otoplenie-promo.png',
+        title: 'Отопление и водоснабжение',
+        description: 'Надёжность и безопасность, экономичный расход, профессиональный монтаж'
       },
     ],
     metaTitle: 'Отопление и водоснабжение в Грозном | Монтаж систем под ключ',
@@ -675,6 +716,13 @@ export const services: ServiceData[] = [
         answer: 'Витраж Тиффани изготавливается 3-4 недели. Фьюзинг (спекание стекла) — 2 недели. Зависит от размера и сложности рисунка.',
       },
     ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/okna/okna-dveri-vitrazhi.png',
+        title: 'Окна, двери и витражи',
+        description: 'Долговечные, современный дизайн, надежная защита'
+      },
+    ],
     metaTitle: 'Окна, двери и витражи в Москве | Изготовление на заказ',
     metaDescription: 'Производство и монтаж окон (ПВХ, алюминий, дерево), дверей, витражей. Индивидуальные размеры. Бесплатный замер. Гарантия 5 лет.',
     keywords: ['пластиковые окна', 'алюминиевые окна', 'двери', 'витражи', 'окна на заказ'],
@@ -769,6 +817,13 @@ export const services: ServiceData[] = [
       {
         question: 'Можно ли повторить исторический декор?',
         answer: 'Да, мы специализируемся на реставрации. Снимаем слепки с сохранившихся элементов и воссоздаём копии.',
+      },
+    ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/gips/gips-promo.png',
+        title: 'Гипсовые изделия и декор — производство и монтаж',
+        description: 'Изысканные гипсовые молдинги, завораживающие гипсовые карнизы, эффектные декоративные панели'
       },
     ],
     metaTitle: 'Гипсовые изделия в Грозном | Молдинги, арки, барельефы на заказ',
@@ -883,6 +938,11 @@ export const services: ServiceData[] = [
         title: 'Подсветка ниши с RGB-управлением',
         description: 'Декоративная подсветка ниши с возможностью изменения цвета',
       },
+      {
+        image: '/images/portfolio/podsvetka/podsvetka-promo.png',
+        title: 'Умная подсветка для лестниц и ниш',
+        description: 'Интеллектуальное включение по датчикам движения, плавная динамическая подсветка каждой ступени, управление через смартфон (Wi-Fi контроль), энергоэффективные LED-решения, современная архитектурная эстетика'
+      },
     ],
   },
 
@@ -930,6 +990,13 @@ export const services: ServiceData[] = [
     faq: [
       { question: 'Какие бренды рекомендуете?', answer: 'Для дома — HiWatch, Ezviz. Для бизнеса — Hikvision, Dahua. Для банков — Axis.' },
       { question: 'Можно смотреть со смартфона?', answer: 'Да, через приложения Hik-Connect, DMSS, Reolink из любой точки мира.' },
+    ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/videonablyudenie/videonablyudenie-promo.png',
+        title: 'Система видеонаблюдения HiWatch',
+        description: 'Качественное изображение, онлайн-просмотр через приложение, комплект полной установки'
+      },
     ],
     metaTitle: 'Видеонаблюдение в СКФО и Москве | Установка IP-камер',
     metaDescription: 'Монтаж систем видеонаблюдения под ключ. Hikvision, Dahua, HiWatch. Удалённый доступ со смартфона. Гарантия 3 года.',
@@ -979,6 +1046,13 @@ export const services: ServiceData[] = [
     faq: [
       { question: 'Можно открыть дверь со смартфона?', answer: 'Да, модели с Wi-Fi позволяют видеть гостя и открывать дверь через приложение.' },
     ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/domofony/domofony-promo.png',
+        title: 'Видеодомофоны с IP-камерой',
+        description: 'Современные модели, IP видеокамера на улице, комплект полной установки'
+      },
+    ],
     metaTitle: 'Домофоны и видеодомофоны | Установка в СКФО и Москве',
     metaDescription: 'Установка видеодомофонов с Wi-Fi, записью видео. Atis, Hikvision, Eltis. Для частных домов и подъездов. Гарантия 3 года.',
     keywords: ['домофоны', 'видеодомофоны', 'установка домофона', 'Atis', 'Hikvision'],
@@ -996,7 +1070,7 @@ export const services: ServiceData[] = [
     heroSubtitle: 'Откатные, распашные ворота, шлагбаумы. Alutech, DoorHan, Nice. Дистанционное управление',
     priceFrom: 35000,
     priceUnit: 'комплект',
-    image: '/images/services/security-hero.jpg',
+    image: '/images/services/card-avtomatika-vorot.png',
     icon: 'DoorOpen',
     benefits: [
       'Ведущие бренды: Alutech, DoorHan, Nice',
@@ -1026,6 +1100,23 @@ export const services: ServiceData[] = [
     ],
     faq: [
       { question: 'Какой привод лучше?', answer: 'Для откатных ворот — DoorHan, Alutech. Для распашных — Nice, FAAC, Came. Зависит от веса створки.' },
+    ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/avtomatika/avtomatika-vorot-promo.png',
+        title: 'Автоматика для откатных ворот',
+        description: 'Удобство и безопасность, бесшумная работа, простое управление'
+      },
+      {
+        image: '/images/portfolio/shlagbaumy/shlagbaum-promo.png',
+        title: 'Шлагбаум Hikvision для парковок и территорий',
+        description: 'Удобство и безопасность, быстрое открытие, бесшумная работа, простое управление и контроль доступа'
+      },
+      {
+        image: '/images/portfolio/avtomatika/garazhnye-vorota.png',
+        title: 'Гаражные ворота',
+        description: 'Надежная защита, удобная калитка, современный дизайн'
+      },
     ],
     metaTitle: 'Автоматика ворот и шлагбаумы | Установка в СКФО и Москве',
     metaDescription: 'Монтаж автоматики для ворот и шлагбаумов. Alutech, DoorHan, Nice, FAAC. Дистанционное управление. Гарантия 3 года.',
@@ -1235,6 +1326,13 @@ export const services: ServiceData[] = [
       },
     ],
     calculatorType: 'signage',
+    portfolioImages: [
+      {
+        image: '/images/services/naruzhnaya-reklama-hero.png',
+        title: 'Монтаж световой вывески «РЕКЛАМА»',
+        description: 'Наружная вывеска, светящиеся буквы, световой короб — услуги под ключ',
+      },
+    ],
     metaTitle: 'Наружная реклама в Грозном от 70 ₽/см | Светящиеся буквы, LED-экраны',
     metaDescription: 'Производство наружной рекламы: светящиеся буквы, LED-экраны, подсветка лестниц и ниш. Дизайн + согласование + монтаж. Гарантия 2 года.',
     keywords: ['наружная реклама', 'светящиеся буквы', 'LED экраны', 'вывески', 'подсветка лестниц'],
@@ -1327,6 +1425,13 @@ export const services: ServiceData[] = [
       {
         question: 'Сколько сохнет венецианская штукатурка?',
         answer: 'Каждый слой сохнет 24 часа. Полный цикл работ занимает 5-7 дней. После покрытия воском можно пользоваться помещением через 2-3 дня.',
+      },
+    ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/venetsianka/venetsianka-promo.png',
+        title: 'Венецианская декоративная штукатурка',
+        description: 'Эстетика интерьера, эксклюзивный эффект, долговечный результат'
       },
     ],
     metaTitle: 'Венецианская декоративная штукатурка от 1200 ₽/м² | Имитация мрамора',
@@ -1443,6 +1548,11 @@ export const services: ServiceData[] = [
         title: 'Утепление кровли пенополиуретаном',
         description: 'Бесшовное покрытие кровли ППУ для максимальной теплоизоляции',
       },
+      {
+        image: '/images/portfolio/ppu/ppu-promo.png',
+        title: 'ППУ утепление пенополиуретаном',
+        description: 'Отличная теплоизоляция, быстрое нанесение, герметичное покрытие'
+      },
     ],
   },
 
@@ -1493,6 +1603,13 @@ export const services: ServiceData[] = [
     faq: [
       { question: 'Когда можно ходить по стяжке?', answer: 'Через 12-24 часа после укладки можно аккуратно ходить. Полная готовность к укладке покрытия — через 3-5 дней.' },
       { question: 'Нужно ли армирование?', answer: 'Армирование фиброволокном уже включено в стоимость. Металлическая сетка требуется только при больших нагрузках.' },
+    ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/styazhka/styazhka-promo.png',
+        title: 'Полусухая стяжка пола',
+        description: 'Ровная поверхность без перепадов, быстрое высыхание, без трещин и усадки, подходит под любое покрытие'
+      },
     ],
     metaTitle: 'Полусухая стяжка пола от 450 ₽/м² | Механизированная стяжка',
     metaDescription: 'Полусухая стяжка пола под ключ. Быстрое высыхание, идеально ровная поверхность, гарантия качества.',
@@ -1547,6 +1664,13 @@ export const services: ServiceData[] = [
     faq: [
       { question: 'Какой ламинат лучше?', answer: 'Для жилых комнат — класс 32, для коридора и кухни — класс 33. Толщина от 8 мм.' },
       { question: 'Нужна ли подложка?', answer: 'Обязательно. Подложка обеспечивает звукоизоляцию и компенсирует мелкие неровности.' },
+    ],
+    portfolioImages: [
+      {
+        image: '/images/portfolio/laminat/laminat-promo.png',
+        title: 'Укладка ламината под ключ',
+        description: 'Быстро и качественно, помощь с выбором материалов, чистая работа'
+      },
     ],
     metaTitle: 'Укладка ламината от 250 ₽/м² | Монтаж ламината под ключ',
     metaDescription: 'Профессиональная укладка ламината с подготовкой основания. Быстро, аккуратно, с гарантией 2 года.',
@@ -1664,6 +1788,11 @@ export const services: ServiceData[] = [
     portfolioImages: [
       { image: '/images/portfolio/krovlya/krovlya-1.png' },
       { image: '/images/portfolio/krovlya/krovlya-2.png' },
+      {
+        image: '/images/portfolio/krovlya/krovlya-promo.png',
+        title: 'Кровля под ключ',
+        description: 'Надёжность и долговечность, современные материалы, профессиональный монтаж, гарантия качества'
+      },
     ],
   },
 
@@ -1836,6 +1965,16 @@ export const services: ServiceData[] = [
     keywords: ['забор жалюзи', 'секционный забор', 'забор ламели', 'горизонтальный забор'],
     portfolioImages: [
       { image: '/images/portfolio/zabory/zabor-zhalyuzi-1.png' },
+      { 
+        image: '/images/portfolio/zabory/zabor-zhalyuzi-promo.png',
+        title: 'Вертикальные и горизонтальные заборы жалюзи',
+        description: 'Стильное ограждение, монтаж под ключ, долговечность'
+      },
+      { 
+        image: '/images/portfolio/zabory/zabor-zhalyuzi-promo-2.png',
+        title: 'Заборы жалюзи под ключ',
+        description: 'Стильное и надёжное ограждение, монтаж под ключ, долговечный и простой в уходе'
+      },
     ],
   },
 ]

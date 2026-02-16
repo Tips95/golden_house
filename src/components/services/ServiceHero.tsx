@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
 interface ServiceHeroProps {
@@ -19,24 +18,11 @@ export default function ServiceHero({
   priceFrom,
   priceUnit,
   benefits,
-  image,
+  image: _image,
 }: ServiceHeroProps) {
   return (
     <section className="relative bg-gradient-to-br from-primary via-primary-light to-primary-dark text-white overflow-hidden">
-      {/* Background Image */}
-      {image && (
-        <div className="absolute inset-0">
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className="object-cover opacity-20"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary-dark/80" />
-        </div>
-      )}
+      {/* Background gradient only — фото в блоке «Примеры работ» */}
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
