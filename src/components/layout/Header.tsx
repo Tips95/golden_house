@@ -120,24 +120,81 @@ export default function Header() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 10 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-neutral-200 overflow-hidden"
+                          className="absolute top-full left-0 mt-2 w-[800px] max-w-[90vw] bg-white rounded-lg shadow-xl border border-neutral-200 overflow-hidden"
                           onMouseEnter={() => setIsServicesOpen(true)}
                           onMouseLeave={() => setIsServicesOpen(false)}
                         >
-                          {services.map(service => (
+                          <div className="grid grid-cols-3 gap-6 p-6">
+                            {/* Строительство и ремонт */}
+                            <div>
+                              <h3 className="text-xs font-bold text-accent-orange uppercase tracking-wider mb-3 px-2">
+                                Строительство и ремонт
+                              </h3>
+                              <div className="space-y-0.5">
+                                {services
+                                  .filter(s => s.category === 'construction')
+                                  .map(service => (
+                                    <Link
+                                      key={service.slug}
+                                      href={`/services/${service.slug}`}
+                                      className="block px-2 py-1.5 hover:bg-neutral-50 rounded-md transition-colors text-sm text-primary hover:text-accent-orange"
+                                    >
+                                      {service.title}
+                                    </Link>
+                                  ))}
+                              </div>
+                            </div>
+
+                            {/* Инженерия */}
+                            <div>
+                              <h3 className="text-xs font-bold text-accent-orange uppercase tracking-wider mb-3 px-2">
+                                Инженерия и автоматика
+                              </h3>
+                              <div className="space-y-0.5">
+                                {services
+                                  .filter(s => s.category === 'engineering')
+                                  .map(service => (
+                                    <Link
+                                      key={service.slug}
+                                      href={`/services/${service.slug}`}
+                                      className="block px-2 py-1.5 hover:bg-neutral-50 rounded-md transition-colors text-sm text-primary hover:text-accent-orange"
+                                    >
+                                      {service.title}
+                                    </Link>
+                                  ))}
+                              </div>
+                            </div>
+
+                            {/* Реклама */}
+                            <div>
+                              <h3 className="text-xs font-bold text-accent-orange uppercase tracking-wider mb-3 px-2">
+                                Рекламное агентство
+                              </h3>
+                              <div className="space-y-0.5">
+                                {services
+                                  .filter(s => s.category === 'advertising')
+                                  .map(service => (
+                                    <Link
+                                      key={service.slug}
+                                      href={`/services/${service.slug}`}
+                                      className="block px-2 py-1.5 hover:bg-neutral-50 rounded-md transition-colors text-sm text-primary hover:text-accent-orange"
+                                    >
+                                      {service.title}
+                                    </Link>
+                                  ))}
+                              </div>
+                            </div>
+                          </div>
+                          
+                          {/* Footer с кнопкой "Все услуги" */}
+                          <div className="border-t border-neutral-200 p-4 bg-neutral-50">
                             <Link
-                              key={service.slug}
-                              href={`/services/${service.slug}`}
-                              className="block px-4 py-3 hover:bg-neutral-100 transition-colors border-b border-neutral-100 last:border-0"
+                              href="/services"
+                              className="block text-center text-sm font-semibold text-accent-orange hover:text-accent-orange/80 transition-colors"
                             >
-                              <div className="font-medium text-primary text-sm">
-                                {service.title}
-                              </div>
-                              <div className="text-xs text-neutral-600 mt-1">
-                                от {service.priceFrom} ₽/{service.priceUnit}
-                              </div>
+                              Посмотреть все услуги →
                             </Link>
-                          ))}
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>

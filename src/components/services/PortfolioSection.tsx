@@ -76,12 +76,12 @@ export default function PortfolioSection({ images, title = 'Наши работ�
               className="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all cursor-pointer"
               onClick={() => openLightbox(index)}
             >
-              <div className="relative aspect-[3/4] w-full bg-neutral-100 overflow-hidden">
+              <div className="relative aspect-[3/4] w-full bg-white overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title || `Работа ${index + 1}`}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-contain group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
                 {/* Hover overlay */}
