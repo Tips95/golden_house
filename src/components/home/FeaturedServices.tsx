@@ -32,7 +32,7 @@ const featuredServices: FeaturedService[] = [
     shadowColor: 'shadow-blue-500/30',
     slug: 'mekhanizirovannaya-shtukaturka',
     features: ['Идеально ровная поверхность', 'Быстрое выполнение', 'Гарантия качества'],
-    image: '/images/services/main-shtukaturka.png',
+    image: '/images/services/card-shtukaturka.png',
     promo: true,
   },
   {
@@ -46,7 +46,7 @@ const featuredServices: FeaturedService[] = [
     shadowColor: 'shadow-orange-500/30',
     slug: 'stroitelstvo-domov',
     features: ['Индивидуальный проект', 'Современные технологии', 'Строим под ключ'],
-    image: '/images/services/main-doma.png',
+    image: '/images/services/card-doma.png',
     promo: false,
   },
   {
@@ -60,7 +60,7 @@ const featuredServices: FeaturedService[] = [
     shadowColor: 'shadow-yellow-500/30',
     slug: 'naruzhnaya-reklama',
     features: ['Наружная вывеска', 'Светящиеся буквы', 'Световой короб'],
-    image: '/images/services/main-reklama.png',
+    image: '/images/services/card-reklama.png',
     promo: false,
   },
   {
@@ -74,7 +74,7 @@ const featuredServices: FeaturedService[] = [
     shadowColor: 'shadow-purple-500/30',
     slug: 'videonablyudenie',
     features: ['Качественное изображение', 'Онлайн-просмотр', 'Полная установка'],
-    image: '/images/services/main-videonablyudenie.png',
+    image: '/images/services/card-videonablyudenie.png',
     promo: false,
   },
 ]

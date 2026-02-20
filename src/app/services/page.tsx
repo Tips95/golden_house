@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import { services } from '@/data/services'
 import { formatPrice } from '@/lib/utils'
@@ -26,57 +27,171 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="space-y-12">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                className={`grid lg:grid-cols-2 gap-8 items-center ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
-              >
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="bg-gradient-to-br from-neutral-300 to-neutral-400 rounded-xl h-80 flex items-center justify-center">
-                    <span className="text-neutral-600 font-semibold">Изображение услуги</span>
-                  </div>
-                </div>
+      <section className="py-12 bg-neutral-50">
+        <div className="container-custom space-y-12">
+          {/* Строительство и ремонт */}
+          <div>
+            <h2 className="text-2xl font-bold text-primary mb-1">Строительство и ремонт</h2>
+            <p className="text-sm text-neutral-500 mb-6">Комплексные строительные работы</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {services
+                .filter((s) => s.category === 'construction')
+                .map((service) => (
+                  <Link
+                    key={service.id}
+                    href={`/services/${service.slug}`}
+                    className="group bg-white rounded-xl shadow-sm border border-neutral-200 hover:border-accent-orange hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  >
+                    {/* Image */}
+                    <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-neutral-50 to-neutral-100 overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                    </div>
 
-                <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                  <h2 className="heading-3 mb-4">{service.title}</h2>
-                  <p className="text-neutral-600 mb-6">{service.fullDescription}</p>
+                    {/* Content */}
+                    <div className="p-4">
+                      <h3 className="text-base font-semibold text-primary mb-2 group-hover:text-accent-orange transition-colors line-clamp-2">
+                        {service.title}
+                      </h3>
+                    
+                      <div className="flex items-baseline space-x-1 mb-2">
+                        {service.priceFrom ? (
+                          <>
+                            <span className="text-xs text-neutral-400">от</span>
+                            <span className="text-xl font-bold text-accent-orange">
+                              {formatPrice(service.priceFrom)}
+                            </span>
+                            <span className="text-xs text-neutral-400">₽</span>
+                          </>
+                        ) : (
+                          <span className="text-sm font-semibold text-neutral-600">
+                            По запросу
+                          </span>
+                        )}
+                      </div>
 
-                  <div className="flex items-baseline space-x-2 mb-6">
-                    {service.priceFrom ? (
-                      <>
-                        <span className="text-neutral-600">от</span>
-                        <span className="text-4xl font-bold text-accent-orange">
-                          {formatPrice(service.priceFrom)}
-                        </span>
-                        <span className="text-neutral-600">/{service.priceUnit}</span>
-                      </>
-                    ) : (
-                      <span className="text-2xl font-bold text-primary">
-                        Цена по запросу
-                      </span>
-                    )}
-                  </div>
-
-                  <ul className="space-y-2 mb-8">
-                    {service.benefits.slice(0, 3).map((benefit, i) => (
-                      <li key={i} className="flex items-start space-x-2">
-                        <span className="text-accent-orange mt-1">✓</span>
-                        <span className="text-neutral-700">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link href={`/services/${service.slug}`} className="btn-primary inline-flex">
-                    Подробнее об услуге <ArrowRight className="w-5 h-5 ml-2" />
+                      <div className="flex items-center text-accent-orange text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                        Подробнее <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
                   </Link>
-                </div>
-              </div>
-            ))}
+                ))}
+            </div>
+          </div>
+
+          {/* Инженерия и автоматика */}
+          <div>
+            <h2 className="text-2xl font-bold text-primary mb-1">Инженерия и автоматика</h2>
+            <p className="text-sm text-neutral-500 mb-6">Безопасность, электрика, умный дом</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {services
+                .filter((s) => s.category === 'engineering')
+                .map((service) => (
+                  <Link
+                    key={service.id}
+                    href={`/services/${service.slug}`}
+                    className="group bg-white rounded-xl shadow-sm border border-neutral-200 hover:border-accent-orange hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  >
+                    {/* Image */}
+                    <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-neutral-50 to-neutral-100 overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-4">
+                      <h3 className="text-base font-semibold text-primary mb-2 group-hover:text-accent-orange transition-colors line-clamp-2">
+                        {service.title}
+                      </h3>
+                    
+                      <div className="flex items-baseline space-x-1 mb-2">
+                        {service.priceFrom ? (
+                          <>
+                            <span className="text-xs text-neutral-400">от</span>
+                            <span className="text-xl font-bold text-accent-orange">
+                              {formatPrice(service.priceFrom)}
+                            </span>
+                            <span className="text-xs text-neutral-400">₽</span>
+                          </>
+                        ) : (
+                          <span className="text-sm font-semibold text-neutral-600">
+                            По запросу
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="flex items-center text-accent-orange text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                        Подробнее <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+            </div>
+          </div>
+
+          {/* Рекламное агентство */}
+          <div>
+            <h2 className="text-2xl font-bold text-primary mb-1">Рекламное агентство</h2>
+            <p className="text-sm text-neutral-500 mb-6">Наружная реклама и вывески</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {services
+                .filter((s) => s.category === 'advertising')
+                .map((service) => (
+                  <Link
+                    key={service.id}
+                    href={`/services/${service.slug}`}
+                    className="group bg-white rounded-xl shadow-sm border border-neutral-200 hover:border-accent-orange hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  >
+                    {/* Image */}
+                    <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-neutral-50 to-neutral-100 overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-4">
+                      <h3 className="text-base font-semibold text-primary mb-2 group-hover:text-accent-orange transition-colors line-clamp-2">
+                        {service.title}
+                      </h3>
+                    
+                      <div className="flex items-baseline space-x-1 mb-2">
+                        {service.priceFrom ? (
+                          <>
+                            <span className="text-xs text-neutral-400">от</span>
+                            <span className="text-xl font-bold text-accent-orange">
+                              {formatPrice(service.priceFrom)}
+                            </span>
+                            <span className="text-xs text-neutral-400">₽</span>
+                          </>
+                        ) : (
+                          <span className="text-sm font-semibold text-neutral-600">
+                            По запросу
+                          </span>
+                        )}
+                      </div>
+
+                      <div className="flex items-center text-accent-orange text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                        Подробнее <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+            </div>
           </div>
         </div>
       </section>
