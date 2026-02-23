@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getServiceBySlug, getAllServiceSlugs } from '@/data/services'
+import { getPortfolioImages } from '@/data/portfolio'
 import { securityBrands } from '@/data/brands'
 import ServiceHero from '@/components/services/ServiceHero'
 import ProcessSection from '@/components/services/ProcessSection'
@@ -93,9 +94,15 @@ export default function ServicePage({ params }: PageProps) {
         <CasesSection cases={service.cases} />
       )}
 
-      {service.portfolioImages && service.portfolioImages.length > 0 && (
-        <PortfolioSection images={service.portfolioImages} />
-      )}
+      {(() => {
+        const portfolioImages =
+          service.portfolioImages?.length > 0
+            ? service.portfolioImages
+            : getPortfolioImages(service.slug)
+        return portfolioImages.length > 0 ? (
+          <PortfolioSection images={portfolioImages} />
+        ) : null
+      })()}
 
       <FAQSection faqs={service.faq} />
     </>

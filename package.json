@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "portfolio:sync": "node scripts/sync-portfolio-images.js",
     "build": "next build",
     "start": "next start -H 0.0.0.0",
     "lint": "next lint",
