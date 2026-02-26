@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle } from 'lucide-react'
+import { CONTACT_PHONE } from '@/data/contacts'
 
 interface ServiceHeroProps {
   title: string
@@ -121,7 +122,7 @@ export default function ServiceHero({
                 </a>
 
                 <a
-                  href="tel:+79281958885"
+                  href={`tel:${CONTACT_PHONE}`}
                   className="flex items-center justify-center gap-2 sm:gap-3 w-full bg-gradient-to-r from-accent-orange to-yellow-500 text-white rounded-xl px-6 py-3 sm:py-4 font-bold text-sm sm:text-base hover:shadow-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-accent-orange/30"
                 >
                   <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

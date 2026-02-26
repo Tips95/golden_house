@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Phone, Mail, ArrowRight } from 'lucide-react'
+import { CONTACT_PHONE, CONTACTS } from '@/data/contacts'
 
 export default function CTASection() {
   return (
@@ -32,7 +33,7 @@ export default function CTASection() {
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-8">
               <a 
-                href="https://wa.me/79281958885"
+                href={`https://wa.me/${CONTACTS.whatsapp.replace('+', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center btn-primary text-base sm:text-lg px-6 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700"
@@ -43,7 +44,7 @@ export default function CTASection() {
                 Написать в WhatsApp
               </a>
               <a 
-                href="tel:+79281958885" 
+                href={`tel:${CONTACT_PHONE}`} 
                 className="inline-flex items-center justify-center btn-secondary-dark text-base sm:text-lg px-6 sm:px-10 py-3 sm:py-4"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />

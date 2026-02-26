@@ -7,8 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, ChevronDown } from 'lucide-react'
 import { services } from '@/data/services'
 import { formatPhoneNumber } from '@/lib/utils'
-
-const COMPANY_PHONE = '+79281958885'
+import { CONTACT_PHONE } from '@/data/contacts'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -214,11 +213,11 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href={`tel:${COMPANY_PHONE}`}
+              href={`tel:${CONTACT_PHONE}`}
               className="flex items-center space-x-2 text-primary hover:text-accent-orange transition-colors"
             >
               <Phone className="w-5 h-5" />
-              <span className="font-semibold">{formatPhoneNumber(COMPANY_PHONE)}</span>
+              <span className="font-semibold">{formatPhoneNumber(CONTACT_PHONE)}</span>
             </a>
             <a
               href="https://wa.me/79281958885"
@@ -300,11 +299,11 @@ export default function Header() {
                 ))}
                 <div className="px-4 pt-4 space-y-3 border-t border-neutral-200">
                   <a
-                    href={`tel:${COMPANY_PHONE}`}
+                    href={`tel:${CONTACT_PHONE}`}
                     className="flex items-center space-x-2 text-primary"
                   >
                     <Phone className="w-5 h-5" />
-                    <span className="font-semibold">{formatPhoneNumber(COMPANY_PHONE)}</span>
+                    <span className="font-semibold">{formatPhoneNumber(CONTACT_PHONE)}</span>
                   </a>
                   <a
                     href="https://wa.me/79281958885"

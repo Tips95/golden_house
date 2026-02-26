@@ -14,7 +14,6 @@ export const PORTFOLIO_SLUG_TO_FOLDER: Record<string, string> = {
   'videonablyudenie': 'videonablyudenie',
   'domofony': 'domofony',
   'avtomatika-vorot': 'avtomatika',
-  'skud': 'skud',
   'led-ekrany-bilbordy': 'led-ekrany',
   'naruzhnaya-reklama': 'reklama',
   'venetsianskaya-dekorativnaya-shtukaturka': 'venetsianka',

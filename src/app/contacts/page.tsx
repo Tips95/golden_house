@@ -2,18 +2,11 @@ import { Metadata } from 'next'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import ContactForm from '@/components/forms/ContactForm'
 import { formatPhoneNumber } from '@/lib/utils'
+import { CONTACTS } from '@/data/contacts'
 
 export const metadata: Metadata = {
   title: 'Контакты',
   description: 'Свяжитесь с нами: телефон, WhatsApp, email, адрес офиса. Работаем по СКФО и Москве ежедневно.',
-}
-
-const CONTACTS = {
-  phone: '+79281958885',
-  whatsapp: '+79281958885',
-  email: 'Golden.House.Services@mail.ru',
-  address: 'ЧР г.Грозный, ул. Авторханова 29',
-  workHours: 'Понедельник - Воскресенье: 9:00 - 20:00',
 }
 
 export default function ContactsPage() {
@@ -99,7 +92,7 @@ export default function ContactsPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-primary mb-1">Режим работы</h3>
-                    <p className="text-neutral-700 whitespace-pre-line">{CONTACTS.workHours}</p>
+                    <p className="text-neutral-700 whitespace-pre-line">{CONTACTS.workHoursLong}</p>
                   </div>
                 </div>
               </div>

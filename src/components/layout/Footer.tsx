@@ -6,13 +6,7 @@ import Image from 'next/image'
 import { Phone, Mail, MapPin, Clock, Instagram, ChevronDown } from 'lucide-react'
 import { services } from '@/data/services'
 import { formatPhoneNumber } from '@/lib/utils'
-
-const COMPANY_INFO = {
-  phone: '+79281958885',
-  email: 'Golden.House.Services@mail.ru',
-  address: 'ЧР г.Грозный, ул. Авторханова 29',
-  workHours: 'Пн-Вс: 9:00–20:00',
-}
+import { CONTACTS } from '@/data/contacts'
 
 const COMPANY_LINKS = [
   { href: '/about', label: 'О компании' },
@@ -47,7 +41,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-2">
               <a
-                href="https://wa.me/79281958885"
+                href={`https://wa.me/${CONTACTS.whatsapp.replace('+', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white/10 rounded-md flex items-center justify-center hover:bg-green-500 transition-colors text-[10px] font-semibold"
@@ -56,7 +50,7 @@ export default function Footer() {
                 WA
               </a>
               <a
-                href="https://t.me/+79281958885"
+                href={`https://t.me/${CONTACTS.phone.replace('+', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white/10 rounded-md flex items-center justify-center hover:bg-blue-500 transition-colors text-[10px] font-semibold"
@@ -74,7 +68,7 @@ export default function Footer() {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href={`tel:${COMPANY_INFO.phone}`}
+                href={`tel:${CONTACTS.phone}`}
                 className="w-8 h-8 bg-white/10 rounded-md flex items-center justify-center hover:bg-accent-orange transition-colors text-xs"
                 aria-label="Позвонить"
               >
@@ -202,24 +196,24 @@ export default function Footer() {
             <p className="text-xs font-semibold uppercase tracking-wider text-white/90">Контакты</p>
             <ul className="space-y-1.5 text-xs text-white/70">
               <li>
-                <a href={`tel:${COMPANY_INFO.phone}`} className="flex items-center gap-2 hover:text-accent-orange transition-colors">
+                <a href={`tel:${CONTACTS.phone}`} className="flex items-center gap-2 hover:text-accent-orange transition-colors">
                   <Phone className="w-3.5 h-3.5 shrink-0" />
-                  {formatPhoneNumber(COMPANY_INFO.phone)}
+                  {formatPhoneNumber(CONTACTS.phone)}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${COMPANY_INFO.email}`} className="flex items-center gap-2 hover:text-accent-orange transition-colors truncate">
+                <a href={`mailto:${CONTACTS.email}`} className="flex items-center gap-2 hover:text-accent-orange transition-colors truncate">
                   <Mail className="w-3.5 h-3.5 shrink-0" />
-                  <span className="truncate">{COMPANY_INFO.email}</span>
+                  <span className="truncate">{CONTACTS.email}</span>
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5" />
-                <span>{COMPANY_INFO.address}</span>
+                <span>{CONTACTS.address}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Clock className="w-3.5 h-3.5 shrink-0" />
-                {COMPANY_INFO.workHours}
+                {CONTACTS.workHours}
               </li>
             </ul>
           </div>

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, HelpCircle } from 'lucide-react'
+import { CONTACT_PHONE, CONTACTS } from '@/data/contacts'
 
 interface FAQItem {
   question: string
@@ -100,11 +101,11 @@ export default function FAQSection({ faqs, title = 'Часто задаваем�
             Позвоните нам или оставьте заявку, и наш специалист ответит на все ваши вопросы
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+79281958885" className="btn-primary">
+            <a href={`tel:${CONTACT_PHONE}`} className="btn-primary">
               Позвонить сейчас
             </a>
             <a
-              href="https://wa.me/79281958885"
+              href={`https://wa.me/${CONTACTS.whatsapp.replace('+', '')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary inline-block"
