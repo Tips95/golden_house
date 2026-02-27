@@ -10,6 +10,7 @@ export interface PortfolioImageItem {
 /** Дополнительные папки с фото для slug (объединяются с основной папкой) */
 const EXTRA_FOLDERS: Record<string, string[]> = {
   'avtomatika-vorot': ['shlagbaumy', 'skud'], // Шлагбаумы и СКУД: avtomatika + shlagbaumy + skud
+  'naruzhnaya-reklama': ['led-ekrany'], // Наружная реклама: добавляем LED-экраны
 }
 
 /**
