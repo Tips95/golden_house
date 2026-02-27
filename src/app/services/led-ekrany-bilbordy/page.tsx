@@ -1,1 +1,21 @@
-\"use client\"\n+\n+import { useEffect } from 'react'\n+import { useRouter } from 'next/navigation'\n+\n+/**\n+ * Редирект: услуга LED-экраны объединена с «Наружная реклама и вывески».\n+ */\n+export default function LedScreensRedirectPage() {\n+  const router = useRouter()\n+\n+  useEffect(() => {\n+    router.replace('/services/naruzhnaya-reklama/')\n+  }, [router])\n+\n+  return (\n+    <div className=\"min-h-[40vh] flex items-center justify-center\">\n+      <p className=\"text-neutral-500\">Перенаправление на обновлённую услугу…</p>\n+    </div>\n+  )\n+}\n+
+\"use client\"
+
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+
+/**
+ * Редирект: услуга LED-экраны объединена с «Наружная реклама и вывески».
+ */
+export default function LedScreensRedirectPage() {
+  const router = useRouter()
+
+  useEffect(() => {
+    router.replace('/services/naruzhnaya-reklama/')
+  }, [router])
+
+  return (
+    <div className="min-h-[40vh] flex items-center justify-center">
+      <p className="text-neutral-500">Перенаправление на обновлённую услугу…</p>
+    </div>
+  )
+}
