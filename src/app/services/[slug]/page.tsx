@@ -96,8 +96,8 @@ export default function ServicePage({ params }: PageProps) {
 
       {(() => {
         const portfolioImages =
-          service.portfolioImages?.length > 0
-            ? service.portfolioImages
+          (service.portfolioImages?.length ?? 0) > 0
+            ? service.portfolioImages!
             : getPortfolioImages(service.slug)
         return portfolioImages.length > 0 ? (
           <PortfolioSection images={portfolioImages} />
