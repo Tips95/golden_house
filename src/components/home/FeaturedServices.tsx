@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Brush, Mountain, Lightbulb, Shield } from 'lucide-react'
+import { ArrowRight, Brush, Building2, Lightbulb, Shield } from 'lucide-react'
 
 interface FeaturedService {
   id: string
@@ -37,16 +37,16 @@ const featuredServices: FeaturedService[] = [
   },
   {
     id: '2',
-    title: 'Строительство домов',
-    description: 'Надёжность и качество, современные технологии, индивидуальный проект, строим под ключ',
-    icon: Mountain,
-    price: '45000',
+    title: 'Вентилируемый фасад (композитные работы)',
+    description: 'ВентФасад под ключ: монтаж и облицовка, композитные панели, керамогранит, проектирование. От 1200 ₽/м²',
+    icon: Building2,
+    price: '1200',
     unit: 'м²',
     gradient: 'from-orange-500 to-red-500',
     shadowColor: 'shadow-orange-500/30',
-    slug: 'stroitelstvo-domov',
-    features: ['Индивидуальный проект', 'Современные технологии', 'Строим под ключ'],
-    image: '/images/services/card-doma.png',
+    slug: 'fasadnye-raboty',
+    features: ['Вентфасады и композит', 'Проектирование и расчёт', 'Гарантия 10 лет'],
+    image: '/images/services/card-fasad.png',
     promo: false,
   },
   {
