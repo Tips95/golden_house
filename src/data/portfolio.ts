@@ -13,24 +13,41 @@ const EXTRA_FOLDERS: Record<string, string[]> = {
   'naruzhnaya-reklama': ['led-ekrany'], // Наружная реклама: добавляем LED-экраны
 }
 
-/** Для каких папок какое фото показывать первым (путь вида /images/portfolio/...) */
-const FIRST_IMAGE_BY_FOLDER: Record<string, string> = {
-  facade: '/images/portfolio/facade/dagestan-stone-2.png',
+/** Кастомный порядок фото по папкам (первые элементы идут в заданной последовательности) */
+const CUSTOM_ORDER_BY_FOLDER: Record<string, string[]> = {
+  facade: [
+    '/images/portfolio/facade/photo_1.jpg',
+    '/images/portfolio/facade/photo_2.jpg',
+    '/images/portfolio/facade/photo_3.jpg',
+    '/images/portfolio/facade/photo_4.jpg',
+    '/images/portfolio/facade/photo_5.jpg',
+  ],
 }
 
 /** Не показывать промо-карточки в блоке «Фото работ» (они уже есть на карточке направления) */
 function isPromoCard(path: string): boolean {
-  return path.includes('-promo.')
+  // Любые файлы с `promo` в названии (например, *-promo.png, *-promo-2.png)
+  return path.toLowerCase().includes('promo')
 }
 
 /**
  * Возвращает массив фото портфолио для услуги по slug.
  * Фото берутся из папки public/images/portfolio/<папка>/ после запуска npm run portfolio:sync
  */
-function putFirst(paths: string[], firstPath: string): string[] {
-  const i = paths.indexOf(firstPath)
-  if (i <= 0) return paths
-  return [firstPath, ...paths.slice(0, i), ...paths.slice(i + 1)]
+function applyCustomOrder(paths: string[], folder: string): string[] {
+  const order = CUSTOM_ORDER_BY_FOLDER[folder]
+  if (!order) return paths
+  const set = new Set(order)
+  const ordered: string[] = []
+  for (const p of order) {
+    if (paths.includes(p)) {
+      ordered.push(p)
+    }
+  }
+  for (const p of paths) {
+    if (!set.has(p)) ordered.push(p)
+  }
+  return ordered
 }
 
 export function getPortfolioImages(serviceSlug: string): PortfolioImageItem[] {
@@ -38,8 +55,7 @@ export function getPortfolioImages(serviceSlug: string): PortfolioImageItem[] {
   const allPaths: string[] = []
   if (folder && portfolioByFolder[folder]?.length) {
     let paths = portfolioByFolder[folder].filter(p => !isPromoCard(p))
-    const first = FIRST_IMAGE_BY_FOLDER[folder]
-    if (first && paths.includes(first)) paths = putFirst(paths, first)
+    paths = applyCustomOrder(paths, folder)
     allPaths.push(...paths)
   }
   const extra = EXTRA_FOLDERS[serviceSlug]
