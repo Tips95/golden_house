@@ -59,7 +59,7 @@ export default function Footer() {
                 TG
               </a>
               <a
-                href="https://instagram.com/Golden_House_Services"
+                href={CONTACTS.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white/10 rounded-md flex items-center justify-center hover:bg-pink-500 transition-colors"

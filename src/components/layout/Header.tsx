@@ -68,38 +68,63 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-xl shadow-neutral-900/5' : 'bg-white/95 backdrop-blur-md'
-      } ${
-        isHeaderVisible ? 'translate-y-0' : '-translate-y-full lg:translate-y-0'
-      }`}
+        isScrolled
+          ? 'bg-white shadow-xl shadow-neutral-900/5 border-b border-neutral-100/80'
+          : 'bg-gradient-to-b from-white via-white to-neutral-50/95 backdrop-blur-md border-b border-white/70'
+      } ${isHeaderVisible ? 'translate-y-0' : '-translate-y-full lg:translate-y-0'}`}
     >
+      {/* Мобильная шапка — отдельная полоса на всю ширину */}
+      <div className="lg:hidden flex items-center justify-between px-4 h-20">
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/images/logo-goldenhouse.png"
+            alt="GoldenHouse Services"
+            width={320}
+            height={107}
+            priority
+            className="h-16 w-auto drop-shadow-md"
+          />
+          <div className="flex flex-col leading-tight">
+            <span className="text-2xl font-bold bg-gradient-to-r from-accent-orange to-yellow-600 bg-clip-text text-transparent">
+              GoldenHouse
+            </span>
+            <span className="text-xs text-neutral-400 font-medium tracking-widest uppercase">
+              services
+            </span>
+          </div>
+        </Link>
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="p-2 text-primary hover:bg-neutral-100 rounded-xl transition-colors"
+        >
+          {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+        </button>
+      </div>
+
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-20 sm:h-20 lg:h-24">
-          {/* Logo + название компании — на мобильных крупнее, заполняют шапку */}
-          <Link href="/" className="flex items-center gap-3 sm:gap-3 flex-1 min-w-0 lg:flex-initial transition-transform hover:scale-[1.02] group">
-            <div className="relative flex-shrink-0">
-              <div className="absolute -inset-2 bg-accent-orange/20 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
-              <Image
-                src="/images/logo-goldenhouse.png"
-                alt="GoldenHouse Services"
-                width={320}
-                height={107}
-                priority
-                className="relative h-14 sm:h-16 lg:h-20 w-auto drop-shadow-lg"
-              />
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-xl sm:text-xl lg:text-2xl font-bold bg-gradient-to-r from-accent-orange to-yellow-600 bg-clip-text text-transparent group-hover:from-accent-orange/90 group-hover:to-yellow-500 transition-all whitespace-nowrap">
+        <div className="hidden lg:flex items-center justify-between h-24">
+          {/* Десктоп: логотип */}
+          <Link href="/" className="flex items-center gap-3 transition-transform hover:scale-[1.02]">
+            <Image
+              src="/images/logo-goldenhouse.png"
+              alt="GoldenHouse Services"
+              width={320}
+              height={107}
+              priority
+              className="h-16 w-auto drop-shadow-lg"
+            />
+            <div className="flex flex-col leading-tight">
+              <span className="text-2xl font-bold bg-gradient-to-r from-accent-orange to-yellow-600 bg-clip-text text-transparent">
                 GoldenHouse
               </span>
-              <span className="text-[10px] sm:text-xs text-neutral-500 font-medium tracking-wide mt-0.5">
-                service&apos;s
+              <span className="text-xs text-neutral-500 font-medium tracking-widest uppercase mt-0.5">
+                services
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="flex items-center space-x-8">
             {navigation.map(item => (
               <div key={item.name} className="relative group">
                 {item.hasDropdown ? (
@@ -211,7 +236,7 @@ export default function Header() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <a
               href={`tel:${CONTACT_PHONE}`}
               className="flex items-center space-x-2 text-primary hover:text-accent-orange transition-colors"
@@ -228,14 +253,6 @@ export default function Header() {
               Получить смету
             </a>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-primary hover:bg-neutral-100 rounded-lg transition-colors"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
 
         {/* Mobile Menu */}
