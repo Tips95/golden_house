@@ -3,7 +3,7 @@
  */
 export const CONTACT_PHONE = '+79281958885'
 export const CONTACT_WHATSAPP = '+79281958885'
-export const CONTACT_EMAIL = 'GoldenHouse_Services.ru'
+export const CONTACT_EMAIL = 'Goldenhouse.services@mail.ru'
 export const CONTACT_INSTAGRAM = 'GoldenHouse__Services'
 export const CONTACT_INSTAGRAM_URL = 'https://www.instagram.com/GoldenHouse__Services'
 export const CONTACT_ADDRESS = 'ЧР г.Грозный, ул. Авторханова 29'
