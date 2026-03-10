@@ -82,13 +82,13 @@ export default function Header() {
             width={320}
             height={107}
             priority
-            className="h-16 w-auto drop-shadow-md"
+            className="h-14 w-auto drop-shadow-md"
           />
-          <div className="flex flex-col leading-tight">
+          <div className="flex flex-col items-center leading-tight">
             <span className="text-2xl font-bold bg-gradient-to-r from-accent-orange to-yellow-600 bg-clip-text text-transparent">
               GoldenHouse
             </span>
-            <span className="text-xs text-neutral-400 font-medium tracking-widest uppercase">
+            <span className="text-[10px] text-neutral-400 font-medium tracking-widest uppercase mt-0.5">
               services
             </span>
           </div>

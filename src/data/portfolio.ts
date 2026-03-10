@@ -22,6 +22,12 @@ const CUSTOM_ORDER_BY_FOLDER: Record<string, string[]> = {
     '/images/portfolio/facade/photo_4.jpg',
     '/images/portfolio/facade/photo_5.jpg',
   ],
+  plaster: [
+    '/images/portfolio/plaster/plaster-service-1.png',
+    '/images/portfolio/plaster/plaster-service-2.png',
+    '/images/portfolio/plaster/plaster-service-3.png',
+    '/images/portfolio/plaster/plaster-service-4.png',
+  ],
 }
 
 /** Не показывать промо-карточки в блоке «Фото работ» (они уже есть на карточке направления) */
