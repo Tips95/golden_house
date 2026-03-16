@@ -50,7 +50,7 @@ export default function Footer() {
                 WA
               </a>
               <a
-                href={`https://t.me/${CONTACTS.phone.replace('+', '')}`}
+                href={CONTACTS.telegramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-white/10 rounded-md flex items-center justify-center hover:bg-blue-500 transition-colors text-[10px] font-semibold"

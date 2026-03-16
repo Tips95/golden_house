@@ -6,6 +6,8 @@ export const CONTACT_WHATSAPP = '+79281958885'
 export const CONTACT_EMAIL = 'Goldenhouse.services@mail.ru'
 export const CONTACT_INSTAGRAM = 'GoldenHouse__Services'
 export const CONTACT_INSTAGRAM_URL = 'https://www.instagram.com/GoldenHouse__Services'
+export const CONTACT_TELEGRAM = '@GoldenHouse_Services'
+export const CONTACT_TELEGRAM_URL = 'https://t.me/GoldenHouse_Services'
 export const CONTACT_ADDRESS = 'ЧР г.Грозный, ул. Авторханова 29'
 export const CONTACT_WORK_HOURS = 'Пн-Вс: 9:00–20:00'
 export const CONTACT_WORK_HOURS_LONG = 'Понедельник - Воскресенье: 9:00 - 20:00'
@@ -16,6 +18,8 @@ export const CONTACTS = {
   email: CONTACT_EMAIL,
   instagram: CONTACT_INSTAGRAM,
   instagramUrl: CONTACT_INSTAGRAM_URL,
+  telegram: CONTACT_TELEGRAM,
+  telegramUrl: CONTACT_TELEGRAM_URL,
   address: CONTACT_ADDRESS,
   workHours: CONTACT_WORK_HOURS,
   workHoursLong: CONTACT_WORK_HOURS_LONG,
